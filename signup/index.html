@@ -1,0 +1,16 @@
+---
+layout: default
+title: Sign Up
+---
+
+<h1>Create your account</h1>
+<form onsubmit="event.preventDefault(); alert('Demo only. Hook this to your backend later.');">
+  <label>Full name<br><input type="text" required></label><br><br>
+  <label>Email<br><input type="email" required></label><br><br>
+  <label>Password<br><input type="password" required minlength="8"></label><br><br>
+  <label>
+    <input type="checkbox" id="agreeBox">
+    I agree to the <a href="{{ '/tos/' | relative_url }}" target="_blank">Terms of Service</a>
+  </label><br><br>
+  <button type="submit" id="signupBtn" disabled>Sign up</button>
+</form>
