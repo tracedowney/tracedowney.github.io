@@ -3,37 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trace Downey</title>
+  <title>TraceDowney.com</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 50px;
-      background: #f0f0f0;
+      background: #f4f4f4;
     }
-    h1 {
-      color: #333;
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px;
     }
-    p {
-      color: #555;
+    main {
+      padding: 40px 20px;
     }
-    a.button {
+    .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #007BFF;
-      color: white;
-      text-decoration: none;
+      padding: 12px 24px;
+      margin: 15px;
+      font-size: 18px;
+      color: #fff;
+      background: #0073e6;
+      border: none;
       border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
     }
-    a.button:hover {
-      background: #0056b3;
+    .btn:hover {
+      background: #005bb5;
+    }
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      background: #222;
+      color: #ccc;
+      font-size: 14px;
+    }
+    footer a {
+      color: #66b3ff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Trace’s Website</h1>
-  <p>This site is hosted for free with <strong>GitHub Pages</strong>.</p>
-  <a class="button" href="https://github.com/tracedowney" target="_blank">Visit My GitHub</a>
+
+  <header>
+    <h1>Welcome to TraceDowney.com</h1>
+  </header>
+
+  <main>
+    <h2>Building Something Great</h2>
+    <p>This is the homepage of my site. Explore and sign up to get started.</p>
+
+    <!-- Register button -->
+    <a href="/signup/" class="btn">Register</a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TraceDowney.com | <a href="/tos/">Terms of Service</a></p>
+  </footer>
+
 </body>
 </html>
