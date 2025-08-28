@@ -4,5 +4,196 @@ title: Terms of Service
 ---
 
 <h1>Terms of Service</h1>
-<p>Placeholder TOS. Replace with your real text later.</p>
-<p>This site may require agreement before account creation.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Service • tracedowney.com</title>
+  <meta name="description" content="Terms of Service for tracedowney.com" />
+  <meta name="robots" content="noindex" />
+  <style>
+    :root {
+      --maxw: 860px;
+      --fg: #e6e6e6;
+      --bg: #0f1115;
+      --muted: #a8b0bf;
+      --accent: #4f8cff;
+      --card: #141821;
+      --border: #242a36;
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;
+      color: var(--fg); background: var(--bg);
+      display: flex; justify-content: center; padding: 40px 16px;
+    }
+    .wrap { width: 100%; max-width: var(--maxw); }
+    header { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 18px; }
+    header h1 { font-size: 1.5rem; margin: 0; }
+    header a { color: var(--accent); text-decoration: none; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+    h2 { margin-top: 1.6rem; }
+    .muted { color: var(--muted); }
+    .btnbar { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    button, .btn {
+      appearance: none; border: 1px solid var(--border); background: #1a2130; color: var(--fg);
+      padding: 10px 14px; border-radius: 10px; cursor: pointer; font-weight: 600;
+    }
+    button.primary { background: var(--accent); border-color: #2b64c9; color: white; }
+    .status { margin-top: 10px; font-size: .95rem; }
+    footer { margin-top: 28px; font-size: .9rem; color: var(--muted); }
+    code { background: #0d131f; border: 1px solid var(--border); padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Terms of Service</h1>
+      <nav>
+        <a href="/">Home</a>
+      </nav>
+    </header>
+
+    <div class="card" role="article" aria-labelledby="tos-title">
+      <p class="muted">Last updated: <span id="last-updated">August 28, 2025</span></p>
+      <h2 id="tos-title">Terms of Service for tracedowney.com (GitHub Pages Deployment)</h2>
+
+      <h3>1. Acceptance of Terms</h3>
+      <p>By creating an account or using this website (<strong>tracedowney.com</strong>, including the dedicated page at <strong>tracedowney.com/tos</strong>), you agree to be bound by these Terms of Service ("TOS"). If you do not agree, you may not create an account or use the services.</p>
+
+      <h3>2. Arbitration Agreement</h3>
+      <p>Any disputes arising from your use of this website or these TOS shall be resolved by binding arbitration, rather than in court. You waive the right to a jury trial or to participate in a class action. Arbitration shall be conducted in accordance with the rules of the American Arbitration Association (AAA). The laws of the State of Texas shall govern.</p>
+
+      <h3>3. Changes to Terms</h3>
+      <p>We reserve the right to update or change these TOS at any time. Updates will be posted on this website, and it is your responsibility to review them periodically. Continued use of the website after changes have been posted constitutes your acceptance of those changes.</p>
+
+      <h3>4. User Accounts</h3>
+      <p>To create an account, you must agree to these TOS during the sign-up process. If you decline, your account cannot be created.</p>
+      <p>We log the following when you view and respond to the TOS:</p>
+      <ul>
+        <li>Email address used to sign up (<a href="mailto:TOS@tracedowney.com">TOS@tracedowney.com</a> for logging correspondence)</li>
+        <li>Date and time of acceptance</li>
+        <li>Whether you accepted or declined</li>
+      </ul>
+      <p>If you decline, account creation will not proceed.</p>
+
+      <h3>5. Permitted Use</h3>
+      <p>You agree to use this website only for lawful purposes and in accordance with these TOS. Misuse, attempts to exploit, or unauthorized access may result in termination of your account.</p>
+
+      <h3>6. Governing Law</h3>
+      <p>These TOS are governed by and construed under the laws of the State of Texas.</p>
+
+      <h3>7. Contact</h3>
+      <p>For questions regarding these TOS, contact: <a href="mailto:TOS@tracedowney.com">TOS@tracedowney.com</a> or <a href="mailto:info@tracedowney.com">info@tracedowney.com</a>.</p>
+
+      <div class="btnbar" aria-live="polite" aria-atomic="true">
+        <button id="agreeBtn" class="primary" type="button">I Agree</button>
+        <button id="declineBtn" type="button">I Decline</button>
+      </div>
+      <div id="status" class="status" role="status"></div>
+
+      <footer>
+        <p>
+          <strong>Note about logging on GitHub Pages:</strong> This site is statically hosted. Acceptance logging and access gating require a backend or external service.
+          This page stores your acceptance locally in your browser and <em>optionally</em> POSTs to a configurable endpoint if you set one.
+        </p>
+        <p class="muted">If you operate a serverless form/webhook, set <code>LOG_ENDPOINT</code> below to capture logs.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // ===== Configuration =====
+    // If you set up a webhook (e.g., a lightweight endpoint, Google Apps Script web app, or Formspree),
+    // paste the URL below to capture acceptance/decline events. Leave blank to disable network logging.
+    const LOG_ENDPOINT = ""; // e.g., "https://script.google.com/macros/s/AKfyc.../exec"
+
+    // (Optional) Gate account creation page
+    // If you have a separate signup page, set its path here and check tos acceptance before allowing access.
+    const SIGNUP_PATH = "/signup/"; // adjust or leave as-is
+
+    // ===== Utilities =====
+    const fmtISO = (d)=> new Date(d).toISOString();
+    const storageKey = "tosAcceptance"; // stores { accepted: true/false, timestamp: ISO, email?: string }
+
+    function setStatus(msg) {
+      const el = document.getElementById("status");
+      if (el) el.textContent = msg;
+    }
+
+    async function logEvent(payload) {
+      if (!LOG_ENDPOINT) return; // no-op if not configured
+      try {
+        const res = await fetch(LOG_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        // ignore body, but you could check res.ok
+      } catch (e) {
+        // swallow errors to avoid blocking UX on static hosting
+        console.warn("TOS log POST failed:", e);
+      }
+    }
+
+    function saveLocal(record) {
+      localStorage.setItem(storageKey, JSON.stringify(record));
+    }
+
+    function readLocal() {
+      try { return JSON.parse(localStorage.getItem(storageKey) || "null"); }
+      catch { return null; }
+    }
+
+    function updateUIFromLocal() {
+      const record = readLocal();
+      if (record?.accepted === true) {
+        setStatus(`You accepted on ${new Date(record.timestamp).toLocaleString()}.`);
+      } else if (record?.accepted === false) {
+        setStatus(`You declined on ${new Date(record.timestamp).toLocaleString()}.`);
+      } else {
+        setStatus("No response recorded yet.");
+      }
+    }
+
+    // ===== Event handlers =====
+    document.getElementById("agreeBtn").addEventListener("click", async () => {
+      const now = Date.now();
+      const record = { accepted: true, timestamp: fmtISO(now) };
+      saveLocal(record);
+      updateUIFromLocal();
+
+      await logEvent({
+        event: "tos_accept",
+        timestamp: record.timestamp,
+        page: location.pathname,
+        userAgent: navigator.userAgent
+      });
+
+      // If you have a signup page, you could redirect after acceptance:
+      // location.href = SIGNUP_PATH;
+    });
+
+    document.getElementById("declineBtn").addEventListener("click", async () => {
+      const now = Date.now();
+      const record = { accepted: false, timestamp: fmtISO(now) };
+      saveLocal(record);
+      updateUIFromLocal();
+
+      await logEvent({
+        event: "tos_decline",
+        timestamp: record.timestamp,
+        page: location.pathname,
+        userAgent: navigator.userAgent
+      });
+
+      // Example: prevent access to signup if declined (client-side only on static hosting)
+      // alert("You must accept the Terms of Service to create an account.");
+    });
+
+    // Initialize UI
+    updateUIFromLocal();
+  </script>
+</body>
+</html>
