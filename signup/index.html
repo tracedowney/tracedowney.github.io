@@ -2,74 +2,60 @@
 layout: default
 title: Sign Up
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} • tracedowney.com</title>
-  <link rel="preload" href="/assets/js/tos-gate.js" as="script">
-  <style>
-    .wrap{max-width:860px;margin:40px auto;padding:0 16px;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif;color:#222}
-    .card{background:#fff;border:1px solid #e6e8ef;border-radius:14px;padding:22px;box-shadow:0 1px 6px rgba(0,0,0,.04)}
-    label{display:block;margin:.5rem 0 .25rem}
-    input,button{font:inherit}
-    input{width:100%;padding:.6rem .7rem;border:1px solid #d1d5df;border-radius:10px}
-    button{margin-top:14px;padding:.7rem 1rem;border-radius:10px;border:1px solid #2b64c9;background:#4f8cff;color:#fff;font-weight:700;cursor:pointer}
-    .note{margin-top:10px;color:#555}
-    .warn{background:#fff8e6;border:1px solid #ffe3a3;border-radius:10px;padding:10px;margin-bottom:14px}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <h1>Sign Up</h1>
-    <div id="tosWarning" class="warn" hidden>
-      You must accept the <a href="/tos/">Terms of Service</a> before creating an account.
-    </div>
-    <div class="card">
-      <form id="signupForm" novalidate>
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+<h2>Create your account</h2>
 
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="Your full name" required />
+<!-- TOS inline (scrollable box) -->
+<div style="max-height: 280px; overflow:auto; border:1px solid #ddd; padding:12px; border-radius:6px; margin-bottom:12px;">
+  {% include tos.html %}
+</div>
 
-        <button type="submit">Create Account</button>
-        <div class="note" id="status"></div>
-      </form>
-    </div>
+<label style="display:block; margin:8px 0;">
+  <input type="checkbox" id="agreeBox">
+  I have read and agree to the Terms of Service.
+  <a href="/tos/" target="_blank" rel="noopener">View full TOS</a>
+</label>
+
+<form id="signupForm" onsubmit="return handleSignupSubmit(event)" novalidate>
+  <input type="hidden" name="tos_version" value="2025-08-15" id="tosVersion">
+  <div style="margin:8px 0;">
+    <label>Email<br><input type="email" name="email" required></label>
   </div>
-  <script src="/assets/js/tos-gate.js"></script>
-  <script>
-    (function(){
-      const statusEl = document.getElementById('status');
-      const warnEl = document.getElementById('tosWarning');
-      const form = document.getElementById('signupForm');
+  <div style="margin:8px 0;">
+    <label>Password<br><input type="password" name="password" required minlength="8"></label>
+  </div>
+  <button id="submitBtn" type="submit" disabled>Create account</button>
+</form>
 
-      // Check acceptance on load; if not accepted, show warning and disable form
-      const accepted = window.TOSGate.isAccepted();
-      if (!accepted) {
-        warnEl.hidden = false;
-        form.querySelector('button[type="submit"]').disabled = true;
-        statusEl.textContent = '';
-      }
+<script>
+  // gate submit button on TOS checkbox
+  const agreeBox = document.getElementById('agreeBox');
+  const submitBtn = document.getElementById('submitBtn');
+  const tosVersion = document.getElementById('tosVersion')?.value || 'unknown';
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        if (!window.TOSGate.isAccepted()) {
-          statusEl.textContent = 'Please accept the Terms first at /tos/.';
-          location.href = '/tos/';
-          return;
-        }
-        // Demo only: Since GitHub Pages is static, we just simulate success.
-        const email = document.getElementById('email').value.trim();
-        const name = document.getElementById('name').value.trim();
-        statusEl.textContent = '✓ Account request recorded locally (demo). Add a backend to complete signup.';
-        // Optionally POST to your backend here.
-        // await fetch('/api/signup', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({email,name}) });
-      });
-    })();
-  </script>
-</body>
-</html>
- 
+  agreeBox.addEventListener('change', () => {
+    submitBtn.disabled = !agreeBox.checked;
+  });
+
+  function handleSignupSubmit(e){
+    if(!agreeBox.checked){
+      alert('Please agree to the Terms of Service to continue.');
+      return false;
+    }
+    // lightweight client-side log (until backend exists)
+    try {
+      const record = {
+        event: 'tos_agreed',
+        tsUtc: new Date().toISOString(),
+        tosVersion,
+        ua: navigator.userAgent
+      };
+      localStorage.setItem('td_tos_log', JSON.stringify(record));
+    } catch(_) {}
+
+    // TODO: replace with real signup + backend logging
+    // For now, show a confirmation and link home.
+    e.preventDefault();
+    window.location.href = '/signup/thanks/';
+    return false;
+  }
+</script>
