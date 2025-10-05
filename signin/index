@@ -2,24 +2,20 @@
 layout: default
 title: Sign In
 ---
-<script>
-const LOG_URL = 'https://tos-logger.trace-a-downey.workers.dev/tos-events';
 
-async function logTosEvent(eventType, userId, tosVersion) {
-  try {
-    const res = await fetch(LOG_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        eventType, userId, tosVersion,
-        tsUtc: new Date().toISOString(),
-        ref: location.href
-      })
-    });
-    return await res.json();
-  } catch (e) {
-    console.warn('TOS log failed', e);
-    return { ok:false, error:'network' };
-  }
-}
-</script>
+<h2>Sign In</h2>
+<p>This is a placeholder sign-in page. Authentication isn’t wired yet.</p>
+
+<form onsubmit="event.preventDefault(); alert('Sign-in not connected yet.');">
+  <div style="margin:8px 0;">
+    <label>Email<br><input type="email" required autocomplete="username" /></label>
+  </div>
+  <div style="margin:8px 0;">
+    <label>Password<br><input type="password" required autocomplete="current-password" /></label>
+  </div>
+  <button type="submit">Sign In</button>
+</form>
+
+<p style="margin-top:12px;">
+  New here? <a href="/signup/">Create an account</a>
+</p>
