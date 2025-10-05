@@ -2,5 +2,24 @@
 layout: default
 title: Sign In
 ---
-<h2>Sign In</h2>
-<p>Sign-in isn’t wired yet. (We can hook this to your future auth later.)</p>
+<script>
+const LOG_URL = 'https://tos-logger.trace-a-downey.workers.dev/tos-events';
+
+async function logTosEvent(eventType, userId, tosVersion) {
+  try {
+    const res = await fetch(LOG_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        eventType, userId, tosVersion,
+        tsUtc: new Date().toISOString(),
+        ref: location.href
+      })
+    });
+    return await res.json();
+  } catch (e) {
+    console.warn('TOS log failed', e);
+    return { ok:false, error:'network' };
+  }
+}
+</script>
