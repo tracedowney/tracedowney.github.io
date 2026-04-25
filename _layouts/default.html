@@ -1,42 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% if page.title %}{{ page.title }} • {% endif %}tracedowney.com</title>
-  <style>
-    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,sans-serif;color:#222;background:#fafafa}
-    header{background:#0f1115;color:#e6e6e6}
-    .nav{max-width:1000px;margin:0 auto;display:flex;gap:20px;align-items:center;justify-content:space-between;padding:14px 16px}
-    .nav a{color:#e6e6e6;text-decoration:none}
-    .nav a:hover{text-decoration:underline}
-    main{max-width:1000px;margin:24px auto;padding:0 16px}
-    footer{max-width:1000px;margin:28px auto 40px;padding:0 16px;color:#666;font-size:.9rem}
-  </style>
+  {% assign page_title = page.title | default: site.title %}
+  {% assign page_description = page.description | default: site.description %}
+  {% assign current_url = page.url | replace: 'index.html', '' %}
+  <title>{% if current_url == '/' %}{{ site.title }}{% else %}{{ page_title }} · {{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page_description | escape }}" />
+  <meta name="theme-color" content="#f4eadc" />
+  <meta name="author" content="Trace Downey" />
+  <meta name="copyright" content="Trace Downey" />
+  {% if page.noindex %}
+  <meta name="robots" content="noindex" />
+  {% endif %}
+  <meta property="og:title" content="{% if current_url == '/' %}{{ site.title }}{% else %}{{ page_title }} · {{ site.title }}{% endif %}" />
+  <meta property="og:description" content="{{ page_description | escape }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
 </head>
-<body>
-  <header>
-    <div class="nav">
-      <div><a href="/">tracedowney.com</a></div>
-      <nav>
-        <a href="/">Home</a>
-        &nbsp;|&nbsp;
-        <a href="/signup/">Sign Up</a>
-        &nbsp;|&nbsp;
-        <a href="/signin/">Sign In</a>
-        &nbsp;|&nbsp;
-        <a href="/tos/">TOS</a>
-      </nav>
-    </div>
-  </header>
-  <main>
-    {{ content }}
-  </main>
-  <footer>
-    © <span id="y"></span> Trace Downey. All rights reserved.
-  </footer>
+<body class="{{ page.body_class }}">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <span class="brand-mark" aria-hidden="true">TD</span>
+          <span class="brand-copy">
+            <strong>Trace Downey</strong>
+            <em>Projects, process, and public-facing work</em>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a {% if current_url == '/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
+          <a {% if current_url contains '/about/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
+          <a {% if current_url contains '/projects/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/projects/' | relative_url }}">Projects</a>
+          <a {% if current_url contains '/work/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/work/' | relative_url }}">Work</a>
+          <a {% if current_url contains '/writing/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/writing/' | relative_url }}">Writing</a>
+          <a {% if current_url contains '/resume/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/resume/' | relative_url }}">Resume</a>
+          <a {% if current_url contains '/contact/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/contact/' | relative_url }}">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="page-content">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__grid">
+        <section>
+          <p class="footer-kicker">tracedowney.com</p>
+          <p class="footer-text">A home base for digital builds, visual storytelling, tactile craft, and the ideas that connect them.</p>
+          <p class="footer-text footer-text--small">Unless otherwise noted, original site content is shared for viewing and evaluation only. Reuse requires prior written permission.</p>
+        </section>
+        <section>
+          <p class="footer-kicker">Explore</p>
+          <div class="footer-links">
+            <a href="{{ '/projects/' | relative_url }}">Projects</a>
+            <a href="{{ '/writing/' | relative_url }}">Writing</a>
+            <a href="{{ '/resume/' | relative_url }}">Resume</a>
+          </div>
+        </section>
+        <section>
+          <p class="footer-kicker">Connect</p>
+          <div class="footer-links">
+            <a href="{{ '/contact/' | relative_url }}">Contact</a>
+            <a href="{{ '/rights/' | relative_url }}">Rights &amp; permissions</a>
+            <a href="mailto:info@tracedowney.com">info@tracedowney.com</a>
+            <a href="https://github.com/tracedowney">GitHub</a>
+          </div>
+        </section>
+      </div>
+      <div class="site-footer__meta">
+        <p>&copy; <span id="current-year"></span> Trace Downey.</p>
+        <div class="footer-links footer-links--inline">
+          <a href="{{ '/rights/' | relative_url }}">Rights</a>
+          <a href="{{ '/tos/' | relative_url }}">Terms</a>
+          <a href="{{ '/signin/' | relative_url }}">Private sign-in</a>
+        </div>
+      </div>
+    </footer>
+  </div>
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

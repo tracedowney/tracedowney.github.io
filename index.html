@@ -1,75 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TraceDowney.com</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      background: #f4f4f4;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px;
-    }
-    main {
-      padding: 40px 20px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 15px;
-      font-size: 18px;
-      color: #fff;
-      background: #0073e6;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #005bb5;
-    }
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      background: #222;
-      color: #ccc;
-      font-size: 14px;
-    }
-    footer a {
-      color: #66b3ff;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
+---
+layout: default
+title: Home
+description: The main portfolio site for Trace Downey, collecting projects across software, photography, drone footage, jewelry, upholstery, textiles, woodworking, and renovation.
+body_class: page-home
+---
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Multidisciplinary portfolio</p>
+    <h1>One home for the code, craft, cameras, and curious side quests.</h1>
+    <p class="lead">I am building tracedowney.com into the place where my projects, process, and personality can all live together. It is part portfolio, part working archive, and part invitation to see how I think across very different mediums.</p>
+    <div class="button-row">
+      <a class="button button-primary" href="/projects/">Explore projects</a>
+      <a class="button button-secondary" href="/about/">Meet Trace</a>
+    </div>
+    <div class="chip-row">
+      <span class="chip">App development</span>
+      <span class="chip">Photography</span>
+      <span class="chip">Drone footage</span>
+      <span class="chip">Jewelry</span>
+      <span class="chip">Origami</span>
+      <span class="chip">Upholstery</span>
+      <span class="chip">Quilting</span>
+      <span class="chip">Woodworking</span>
+      <span class="chip">Renovation</span>
+    </div>
+  </div>
+  <aside class="hero-panel card">
+    <p class="eyebrow eyebrow--muted">What this site is for</p>
+    <h2>A public-facing basecamp.</h2>
+    <p>Some projects start on a screen. Others start with fabric, wood, paper, tools, or a camera. This site is designed to keep those threads connected without flattening them into one generic vibe.</p>
+    <div class="mini-list">
+      <div>
+        <strong>Easy to share</strong>
+        <p>Clean pages for people who want the quick version.</p>
+      </div>
+      <div>
+        <strong>Easy to grow</strong>
+        <p>Built to hold new experiments, progress logs, and future work.</p>
+      </div>
+      <div>
+        <strong>Easy to navigate</strong>
+        <p>Clear paths into projects, writing, resume, and contact.</p>
+      </div>
+    </div>
+  </aside>
+</section>
 
-  <header>
-    <h1>Welcome to TraceDowney.com</h1>
-  </header>
+<section class="section">
+  <div class="section-heading">
+    <p class="eyebrow">Featured lanes</p>
+    <h2>Different materials, shared instincts.</h2>
+    <p>The through-line is problem-solving with taste, patience, and curiosity. Each area gets its own texture, but the whole site still feels like one person made it.</p>
+  </div>
+  <div class="domain-grid">
+    <article class="domain-card domain-card--code">
+      <p class="domain-card__eyebrow">Digital</p>
+      <h3>App Development</h3>
+      <p>Interfaces, tools, workflows, and side projects that turn messy ideas into something usable.</p>
+      <a href="/projects/#app-development">See the lane</a>
+    </article>
+    <article class="domain-card domain-card--photo">
+      <p class="domain-card__eyebrow">Visual</p>
+      <h3>Photography</h3>
+      <p>Still images, edits, atmosphere, and the quiet details that make a project memorable.</p>
+      <a href="/projects/#photography">See the lane</a>
+    </article>
+    <article class="domain-card domain-card--aerial">
+      <p class="domain-card__eyebrow">Motion</p>
+      <h3>Drone Footage</h3>
+      <p>Aerial perspective for documentation, storytelling, and seeing patterns that are harder to spot from the ground.</p>
+      <a href="/projects/#drone-footage">See the lane</a>
+    </article>
+    <article class="domain-card domain-card--paper">
+      <p class="domain-card__eyebrow">Adornment</p>
+      <h3>Jewelry</h3>
+      <p>Small-scale design, material choices, and pieces where detail, finish, and wearability all matter.</p>
+      <a href="/projects/#jewelry">See the lane</a>
+    </article>
+    <article class="domain-card domain-card--paper">
+      <p class="domain-card__eyebrow">Form</p>
+      <h3>Origami</h3>
+      <p>Precision, geometry, repetition, and the kind of craft that teaches patience by force.</p>
+      <a href="/projects/#origami">See the lane</a>
+    </article>
+    <article class="domain-card domain-card--textile">
+      <p class="domain-card__eyebrow">Textile</p>
+      <h3>Quilting</h3>
+      <p>Color, pattern, structure, and the satisfaction of turning many small decisions into one coherent piece.</p>
+      <a href="/projects/#quilting">See the lane</a>
+    </article>
+    <article class="domain-card domain-card--restore">
+      <p class="domain-card__eyebrow">Restoration</p>
+      <h3>Upholstery</h3>
+      <p>Rescuing tired pieces, learning from old construction, and giving useful objects another life.</p>
+      <a href="/projects/#upholstery">See the lane</a>
+    </article>
+    <article class="domain-card domain-card--build">
+      <p class="domain-card__eyebrow">Making</p>
+      <h3>Woodworking</h3>
+      <p>Functional builds, material honesty, and the process of getting good one cut at a time.</p>
+      <a href="/projects/#woodworking">See the lane</a>
+    </article>
+    <article class="domain-card domain-card--reno">
+      <p class="domain-card__eyebrow">Progress</p>
+      <h3>Renovation</h3>
+      <p>Before-and-after stories, in-progress lessons, and long-haul projects that reward follow-through.</p>
+      <a href="/projects/#renovation">See the lane</a>
+    </article>
+  </div>
+</section>
 
-  <main>
-    <h2>Building Something Great</h2>
-    <p>Welcome to my site!. Explore, create an account, or sign in to continue.</p>
-  <p>
-    <a class="btn" href="/signup/">Register</a>
-    &nbsp;
-    <a class="btn secondary" href="/signin/">Sign In</a>
-  </p>
-</main>
+<section class="section section-split">
+  <div class="card prose-card">
+    <p class="eyebrow">Why it works</p>
+    <h2>Big enough for all the side things. Focused enough to still feel like me.</h2>
+    <p>I do not want this site to read like a random list of hobbies. I want it to make the case that the same strengths show up whether I am building an interface, planning a quilt, setting a stone, documenting a renovation, or shaping a piece of wood.</p>
+    <p>That means clarity, care, and a little personality in every section. It also means giving each category enough room to breathe instead of forcing everything into one narrow template.</p>
+  </div>
+  <div class="stack-grid">
+    <a class="link-tile" href="/about/">
+      <span class="link-tile__label">About</span>
+      <strong>Get the fuller picture.</strong>
+      <p>A more readable bio, the themes behind the work, and what keeps me making things.</p>
+    </a>
+    <a class="link-tile" href="/work/">
+      <span class="link-tile__label">Work</span>
+      <strong>See how I like to contribute.</strong>
+      <p>Capabilities, collaboration fit, and the kinds of problems that hold my attention.</p>
+    </a>
+    <a class="link-tile" href="/writing/">
+      <span class="link-tile__label">Writing</span>
+      <strong>Follow the thinking.</strong>
+      <p>Field notes, process breakdowns, and lessons gathered from making across mediums.</p>
+    </a>
+    <a class="link-tile" href="/resume/">
+      <span class="link-tile__label">Resume</span>
+      <strong>Share the practical version.</strong>
+      <p>A quick snapshot today, with room for a full PDF and experience timeline next.</p>
+    </a>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 TraceDowney.com | <a href="/tos/">Terms of Service</a></p>
-  </footer>
-
-</body>
-</html>
+<section class="section section-cta">
+  <div class="cta-card">
+    <p class="eyebrow">Next step</p>
+    <h2>Start with the work, then we can layer in your real assets.</h2>
+    <p>This first pass creates a strong structure and voice. Once your logo file, resume, project screenshots, galleries, and links are ready, they can drop into a site that already knows what it wants to be.</p>
+    <div class="button-row">
+      <a class="button button-primary" href="/contact/">Contact</a>
+      <a class="button button-secondary" href="/resume/">View resume page</a>
+    </div>
+    <p class="subtle subtle--spaced">Need to keep your work protected while still showing it publicly? Start with the site’s <a href="/rights/">rights and permissions notice</a>.</p>
+  </div>
+</section>
