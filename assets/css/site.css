@@ -32,6 +32,8 @@ html {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   margin: 0;
   min-height: 100vh;
   color: var(--ink-900);
@@ -47,12 +49,29 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
+  z-index: 0;
   pointer-events: none;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.36), transparent 80%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 14vh;
+  right: -7rem;
+  z-index: 0;
+  width: min(66rem, 76vw);
+  height: min(18rem, 28vw);
+  pointer-events: none;
+  background: url("/assets/images/trace-signature.svg") no-repeat center / contain;
+  opacity: 0.1;
+  filter: saturate(0) contrast(1.06);
+  mix-blend-mode: multiply;
+  transform: rotate(-4deg);
 }
 
 a {
@@ -102,6 +121,22 @@ ul {
 
 .site-shell {
   position: relative;
+  z-index: 1;
+}
+
+body.page-home .site-shell::before,
+body.page-projects .site-shell::before {
+  content: "";
+  position: fixed;
+  left: -4.5rem;
+  bottom: 1.25rem;
+  z-index: 0;
+  width: min(22rem, 28vw);
+  aspect-ratio: 1;
+  pointer-events: none;
+  background: url("/assets/images/trace-tree-logo.svg") no-repeat center / contain;
+  opacity: 0.08;
+  filter: saturate(0.7);
 }
 
 .site-header {
@@ -137,14 +172,19 @@ ul {
 .brand-mark {
   display: inline-grid;
   place-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #1e2d3d, #bc5a36);
-  color: #fff8ef;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  width: 3.3rem;
+  height: 3.3rem;
+  padding: 0.32rem;
+  border: 1px solid rgba(28, 35, 48, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 250, 244, 0.92);
+  box-shadow: var(--shadow-soft);
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand-copy {
@@ -334,6 +374,57 @@ ul {
 .cta-card {
   border-radius: var(--radius-lg);
   padding: 1.8rem;
+}
+
+.hero-panel--story {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero-panel__visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 17rem;
+  border-radius: calc(var(--radius-lg) - 6px);
+  background: linear-gradient(160deg, rgba(255, 250, 244, 0.9), rgba(232, 223, 209, 0.78));
+}
+
+.hero-panel__portrait {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.hero-panel__badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: inline-grid;
+  place-items: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  padding: 0.42rem;
+  border: 1px solid rgba(28, 35, 48, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 250, 244, 0.92);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-panel__badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-panel__body {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.hero-panel__body .mini-list {
+  margin-top: 0.35rem;
 }
 
 .hero-panel h2 {
@@ -686,6 +777,8 @@ ul {
 }
 
 .site-footer__grid {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr 0.9fr;
   gap: 1rem;
@@ -694,6 +787,20 @@ ul {
   border-radius: var(--radius-lg);
   background: rgba(255, 250, 244, 0.72);
   box-shadow: var(--shadow-soft);
+}
+
+.site-footer__grid::after {
+  content: "";
+  position: absolute;
+  right: -3rem;
+  bottom: -2.4rem;
+  width: 18rem;
+  height: 7rem;
+  pointer-events: none;
+  background: url("/assets/images/trace-signature.svg") no-repeat center / contain;
+  opacity: 0.08;
+  filter: saturate(0) contrast(1.04);
+  mix-blend-mode: multiply;
 }
 
 .footer-kicker {
@@ -792,6 +899,12 @@ ul {
 }
 
 @media (max-width: 860px) {
+  body::after,
+  body.page-home .site-shell::before,
+  body.page-projects .site-shell::before {
+    opacity: 0.06;
+  }
+
   .site-header__inner,
   .site-footer__meta {
     align-items: flex-start;
@@ -807,9 +920,20 @@ ul {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+
+  .hero-panel__visual {
+    min-height: 14rem;
+  }
 }
 
 @media (max-width: 640px) {
+  body::after,
+  body.page-home .site-shell::before,
+  body.page-projects .site-shell::before,
+  .site-footer__grid::after {
+    display: none;
+  }
+
   .page-content {
     padding-top: 1.5rem;
   }
@@ -839,5 +963,10 @@ ul {
 
   .brand-copy em {
     display: none;
+  }
+
+  .hero-panel__badge {
+    width: 3.5rem;
+    height: 3.5rem;
   }
 }

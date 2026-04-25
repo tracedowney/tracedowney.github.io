@@ -30,7 +30,9 @@
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="{{ '/' | relative_url }}">
-          <span class="brand-mark" aria-hidden="true">TD</span>
+          <span class="brand-mark" aria-hidden="true">
+            <img src="{{ '/assets/images/trace-tree-logo.svg' | relative_url }}" alt="" />
+          </span>
           <span class="brand-copy">
             <strong>Trace Downey</strong>
             <em>Projects, process, and public-facing work</em>
@@ -80,9 +82,9 @@
       <div class="site-footer__meta">
         <p>&copy; <span id="current-year"></span> Trace Downey.</p>
         <div class="footer-links footer-links--inline">
+          <a href="{{ '/about/' | relative_url }}">About</a>
           <a href="{{ '/rights/' | relative_url }}">Rights</a>
           <a href="{{ '/tos/' | relative_url }}">Terms</a>
-          <a href="{{ '/signin/' | relative_url }}">Private sign-in</a>
         </div>
       </div>
     </footer>
