@@ -43,7 +43,6 @@
           <a {% if current_url contains '/about/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
           <a {% if current_url contains '/projects/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/projects/' | relative_url }}">Projects</a>
           <a {% if current_url contains '/work/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/work/' | relative_url }}">Work</a>
-          <a {% if current_url contains '/writing/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/writing/' | relative_url }}">Writing</a>
           <a {% if current_url contains '/resume/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/resume/' | relative_url }}">Resume</a>
           <a {% if current_url contains '/contact/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/contact/' | relative_url }}">Contact</a>
         </nav>
@@ -65,7 +64,7 @@
           <p class="footer-kicker">Explore</p>
           <div class="footer-links">
             <a href="{{ '/projects/' | relative_url }}">Projects</a>
-            <a href="{{ '/writing/' | relative_url }}">Writing</a>
+            <a href="{{ '/work/' | relative_url }}">Work</a>
             <a href="{{ '/resume/' | relative_url }}">Resume</a>
           </div>
         </section>
