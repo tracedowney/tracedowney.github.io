@@ -29,14 +29,11 @@
   <div class="site-shell">
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="brand" href="{{ '/' | relative_url }}">
+        <a class="brand" aria-label="Trace Downey home" href="{{ '/' | relative_url }}">
           <span class="brand-mark" aria-hidden="true">
             <img src="{{ '/assets/images/trace-tree-logo.svg' | relative_url }}" alt="" />
           </span>
-          <span class="brand-copy">
-            <strong>Trace Downey</strong>
-            <em>Projects, process, and public-facing work</em>
-          </span>
+          <span class="brand-copy">Projects, process, and public-facing work</span>
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
           <a {% if current_url == '/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
