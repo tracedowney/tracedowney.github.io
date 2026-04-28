@@ -3,3 +3,6 @@ description: Multidisciplinary portfolio spanning software, visual storytelling,
 url: https://tracedowney.com
 timezone: America/Chicago
 lang: en
+exclude:
+  - tmp
+  - drafts

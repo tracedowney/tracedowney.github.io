@@ -1,0 +1,8 @@
+<nav class="lane-menu" aria-label="Project lanes">
+  {% for item in site.data.project_lanes %}
+  <a class="lane-button lane-button--{{ item.theme }}{% if include.current_slug == item.slug %} is-active{% endif %}" href="{{ item.url | relative_url }}"{% if include.current_slug == item.slug %} aria-current="page"{% endif %}>
+    <span class="lane-button__title">{{ item.title }}</span>
+    <span class="lane-button__detail">{{ item.summary }}</span>
+  </a>
+  {% endfor %}
+</nav>

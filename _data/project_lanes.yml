@@ -1,0 +1,278 @@
+- title: App Development
+  slug: app-development
+  url: /projects/app-development/
+  summary: Interfaces, tools, and workflows that turn rough ideas into usable systems.
+  lead: Software work I care about most is calm, useful, and structured enough to keep doing its job after launch.
+  group: professional
+  background: logo
+  theme: code
+  overview: This lane gathers product thinking, workflow cleanup, and digital builds that have a real job to do.
+  cards:
+    - title: Product thinking with a real job to do
+      copy: The best software work here is grounded in actual use, not spectacle.
+      bullets:
+        - Calm interfaces with obvious next steps
+        - Practical systems that reduce confusion
+        - Structure that still makes sense later
+    - title: Workflow clarity over gimmicks
+      copy: I like software that helps people move through a process with less friction and better handoffs.
+      bullets:
+        - Internal tools and review helpers
+        - Better status visibility and clearer sequencing
+        - Documentation that keeps the build maintainable
+    - title: Public-facing builds with a point of view
+      copy: Landing pages, portfolio sites, and side projects belong here when the experience itself is part of the craft.
+      bullets:
+        - Stronger hierarchy and clearer navigation
+        - Better presentation for nuanced work
+        - First versions that already feel intentional
+  feature:
+    title: AuditOS
+    lede: "AuditOS is the clearest example of the kind of app work I most enjoy: practical, process-aware, and built to make review work easier to trust."
+    body:
+      - The value is not in spectacle. It is in helping people move through a repeatable workflow with less friction, clearer status, and fewer missed details.
+      - Even without a screenshot gallery, AuditOS belongs at the front of this lane because it shows the kind of software judgment I most enjoy applying.
+    chips:
+      - Workflow clarity
+      - Review-ready records
+      - Calm interface decisions
+      - Practical product thinking
+    details:
+      - title: Useful structure over novelty
+        copy: "AuditOS centers the parts of software work I care about most: sequence, legibility, and decisions that still make sense later."
+      - title: Clear handoffs between steps
+        copy: Good internal products do not just collect information. They make it easier for the next person to see what changed, what needs attention, and what happens next.
+      - title: Software with a real job to do
+        copy: "This is the digital lane at its best for me: opinionated enough to reduce confusion and calm enough to support the actual work."
+
+- title: Photography
+  slug: photography
+  url: /projects/photography/
+  summary: Still images, edits, and quiet details that make a project or place memorable.
+  lead: Still images give me a way to pay attention. This lane is about atmosphere, composition, and the kinds of details that disappear when everything moves too fast.
+  group: personal
+  background: signature
+  theme: photo
+  overview: Photography is where observation, mood, and documentation meet without needing to shout.
+  cards:
+    - title: Quiet detail
+      copy: I am usually looking for texture, shape, light, and small moments that can hold attention without begging for it.
+      bullets:
+        - Texture, shadow, and atmosphere
+        - Everyday scenes with a stronger point of view
+        - Sets that feel cohesive when seen together
+    - title: Documentation worth doing well
+      copy: A camera is also a way to preserve work in progress, finished projects, and the context that makes them legible later.
+      bullets:
+        - Build progress and finished work
+        - Before-and-after transformations
+        - Visual references for future decisions
+    - title: Selection with restraint
+      copy: The goal is not dumping everything online. It is choosing images that can stand still for a while.
+      bullets:
+        - Curated image sets
+        - Mood carried through edits and sequence
+        - Permission handled deliberately
+
+- title: Drone Footage
+  slug: drone-footage
+  url: /projects/drone-footage/
+  summary: Aerial perspective for documentation, storytelling, and seeing patterns from above.
+  lead: Aerial footage changes the story by showing scale, sequence, geography, and progress in a way ground-level images sometimes cannot.
+  group: personal
+  background: signature
+  theme: aerial
+  overview: Drone work belongs here when motion and altitude genuinely add information instead of just spectacle.
+  cards:
+    - title: Context from above
+      copy: The best aerial frames make a place easier to understand.
+      bullets:
+        - Landscape and location context
+        - Property and renovation progress
+        - Spatial logic that still images can miss
+    - title: Motion with a job to do
+      copy: Movement matters most when it helps reveal sequence, scale, or pattern.
+      bullets:
+        - Travel and place-based edits
+        - Highlight reels grounded in real context
+        - Overviews that clarify what changed
+    - title: Capture with judgment
+      copy: Good drone footage is more than a pretty sweep. It needs control, safety, and a reason to exist.
+      bullets:
+        - Frames chosen for pattern, not noise
+        - Compliance and safety awareness
+        - Footage that supports the story instead of replacing it
+
+- title: Jewelry
+  slug: jewelry
+  url: /projects/jewelry/
+  summary: Small-scale design where finish, material choices, and wearability all matter.
+  lead: Jewelry lives at a scale where every decision shows, which is part of why I like it.
+  group: professional
+  background: logo
+  theme: paper
+  overview: This lane is for wearable object-making where detail, finish, and proportion carry real weight.
+  cards:
+    - title: Small pieces with high attention
+      copy: Scale makes every design choice visible, so care matters more, not less.
+      bullets:
+        - Form, balance, and silhouette
+        - Material and hardware choices
+        - Finish quality that rewards a close read
+    - title: Wearable design judgment
+      copy: Pieces need to work visually and practically at the same time.
+      bullets:
+        - Refinement without overworking the piece
+        - Practical wearability
+        - Design that feels deliberate in the hand
+    - title: Documentation that respects the object
+      copy: Small work deserves serious presentation too.
+      bullets:
+        - Detail photography that honors scale
+        - Groupings by material or technique
+        - A sharper public-facing read on craft
+
+- title: Origami
+  slug: origami
+  url: /projects/origami/
+  summary: Precision, geometry, and repetition made tangible through paper.
+  lead: Origami is one of the clearest examples of why I love precision. It is patience, structure, and delight condensed into paper.
+  group: personal
+  background: signature
+  theme: paper
+  overview: This lane is about sequence, geometry, and the satisfaction of clean execution.
+  cards:
+    - title: Geometry made tangible
+      copy: Paper makes structure visible in a way few mediums can.
+      bullets:
+        - Clean folds and modular forms
+        - Pattern and repetition
+        - Precision that shows immediately
+    - title: Discipline in miniature
+      copy: Small mistakes matter, which makes the process a good teacher.
+      bullets:
+        - Sequence and control
+        - Patience sharpened by repetition
+        - Instructions that have to be followed well
+    - title: Finished pieces treated like design objects
+      copy: The payoff is not just the fold. It is the finished presence of the piece.
+      bullets:
+        - Models with visual rhythm
+        - Paper choice as part of the result
+        - Craft that still leaves room for delight
+
+- title: Quilting
+  slug: quilting
+  url: /projects/quilting/
+  summary: Color, pattern, structure, and the slow satisfaction of a coherent whole.
+  lead: Quilting is where color, utility, rhythm, and long-form patience all meet.
+  group: personal
+  background: signature
+  theme: textile
+  overview: This lane is about many small decisions resolving into one finished piece with warmth and structure.
+  cards:
+    - title: Pattern with a pulse
+      copy: The structure matters, but the finished piece still has to feel human.
+      bullets:
+        - Layout and balance
+        - Color relationships that carry mood
+        - Utility with a strong visual identity
+    - title: Slow work on purpose
+      copy: Quilting rewards planning while still leaving room for instinct.
+      bullets:
+        - Planning that does not erase intuition
+        - Technique as problem-solving
+        - Process notes that show how the piece evolved
+    - title: Warmth built from order
+      copy: It is one of my favorite examples of order becoming something generous.
+      bullets:
+        - Many small decisions, one whole
+        - Structure that stays personal
+        - Finished pieces that reward close attention
+
+- title: Upholstery
+  slug: upholstery
+  url: /projects/upholstery/
+  summary: Rescuing tired pieces and giving useful objects another life.
+  lead: Upholstery and reupholstery are part problem-solving, part craftsmanship, and part respect for what a piece can still become.
+  group: professional
+  background: logo
+  theme: warm
+  overview: This lane is where restoration, material judgment, and public-facing craftsmanship meet.
+  cards:
+    - title: Second life, not second-best
+      copy: I like projects that restore usefulness and character at the same time.
+      bullets:
+        - Reading how a piece was made
+        - Choosing what to preserve and what to redo
+        - Making tired pieces feel cared for again
+    - title: Material choices that change the outcome
+      copy: Fabric, finish, fit, and durability all affect whether the result feels right.
+      bullets:
+        - Before-and-after transformations
+        - Shape, comfort, and longevity
+        - Construction decisions that actually matter
+    - title: Useful objects with renewed presence
+      copy: Good upholstery respects both history and everyday life.
+      bullets:
+        - Pieces that preserve character
+        - Work that feels serviceable and polished
+        - Craft with clear public-facing value
+
+- title: Woodworking
+  slug: woodworking
+  url: /projects/woodworking/
+  summary: Functional builds, honest materials, and getting better one cut at a time.
+  lead: Woodworking appeals to the part of me that likes honest materials, durable solutions, and learning through repetition until the work gets cleaner.
+  group: professional
+  background: logo
+  theme: build
+  overview: This lane collects practical builds and material-first problem-solving.
+  cards:
+    - title: Functional work with real stakes
+      copy: The object has to work, last, and feel well made.
+      bullets:
+        - Durable solutions over decorative shortcuts
+        - Proportion and joinery choices that hold up
+        - Clean execution learned through repetition
+    - title: Material honesty
+      copy: Wood tells the truth quickly, which is part of the appeal.
+      bullets:
+        - Respect for grain and structure
+        - Better decisions through handling the material
+        - Builds that feel straightforward rather than fussy
+    - title: Process that keeps getting cleaner
+      copy: Improvement shows up cut by cut, which makes this lane a good teacher.
+      bullets:
+        - Learning by doing
+        - Stronger planning before the first cut
+        - Results that feel grounded and useful
+
+- title: Renovation
+  slug: renovation
+  url: /projects/renovation/
+  summary: Before-and-after stories, in-progress lessons, and long-haul follow-through.
+  lead: Renovation is where documentation, problem-solving, and stubborn follow-through all have to coexist.
+  group: personal
+  background: signature
+  theme: reno
+  overview: This lane is for the long-haul projects that ask for vision, patience, and the willingness to keep going.
+  cards:
+    - title: Before-and-after with the middle included
+      copy: Renovation is never only the reveal. The process is part of the story.
+      bullets:
+        - Progress over time
+        - Lessons learned in public
+        - Spaces that earn their transformation
+    - title: Long-form problem-solving
+      copy: These projects need judgment, budget awareness, and the ability to adapt without losing the larger point.
+      bullets:
+        - Scope changes handled honestly
+        - Design decisions under real constraints
+        - Follow-through when the novelty wears off
+    - title: Documentation that makes the work legible
+      copy: Good records help the change feel real and understandable.
+      bullets:
+        - Process photography and notes
+        - Context for what changed and why
+        - Finished spaces with a stronger story

@@ -1,0 +1,68 @@
+---
+layout: default
+---
+{% assign lane = site.data.project_lanes | where: "slug", page.lane_slug | first %}
+<section class="page-intro page-intro--wide project-page-intro">
+  <h1>{{ lane.title }}</h1>
+  <p class="lead">{{ lane.lead }}</p>
+</section>
+
+<section class="project-shell">
+  <aside class="lane-sidebar lane-sidebar--sticky card">
+    <div class="lane-sidebar__intro">
+      <h2>Project lanes</h2>
+      <p>Choose the lane first. Each page keeps its own tone, background, and set of details.</p>
+    </div>
+    {% include lane-menu.html current_slug=lane.slug %}
+  </aside>
+
+  <article class="project-main">
+    <section class="card project-summary-card">
+      <h2>{{ lane.title }} at a glance.</h2>
+      <p>{{ lane.overview }}</p>
+    </section>
+
+    <section class="lane-grid lane-grid--project">
+      {% for card in lane.cards %}
+      <article class="lane-card lane-card--{{ lane.theme }}">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.copy }}</p>
+        {% if card.bullets %}
+        <ul class="compact-list">
+          {% for bullet in card.bullets %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </section>
+
+    {% if lane.feature %}
+    <section class="project-feature project-feature--{{ lane.theme }}">
+      <div class="project-feature__copy">
+        <h2>{{ lane.feature.title }}</h2>
+        <p class="project-feature__lede">{{ lane.feature.lede }}</p>
+        {% for paragraph in lane.feature.body %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
+        {% if lane.feature.chips %}
+        <div class="pill-cloud" aria-label="{{ lane.feature.title }} focus areas">
+          {% for chip in lane.feature.chips %}
+          <span class="chip">{{ chip }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <div class="project-feature__details">
+        {% for detail in lane.feature.details %}
+        <article class="project-detail-card">
+          <h3>{{ detail.title }}</h3>
+          <p>{{ detail.copy }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </article>
+</section>
