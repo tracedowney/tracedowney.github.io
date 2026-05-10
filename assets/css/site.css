@@ -818,6 +818,13 @@ body.background-logo .site-shell::before {
   pointer-events: none;
 }
 
+.cta-helper {
+  margin-top: 0.9rem;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  color: var(--ink-500);
+}
+
 .page-intro {
   padding: 2.1rem 0 0.8rem;
 }
