@@ -6,17 +6,32 @@ body_class: page-project-case-study page-project-auditos
 background_style: logo
 ---
 <section class="page-intro page-intro--wide case-study-intro">
-  <nav class="breadcrumb-row" aria-label="Breadcrumb">
-    <a href="{{ '/projects/' | relative_url }}">Projects</a>
-    <span aria-hidden="true">&gt;</span>
-    <span aria-current="page">AuditOS</span>
-  </nav>
-  <p class="eyebrow">Browser Privacy &amp; Security Auditor</p>
-  <h1>AuditOS</h1>
-  <p class="lead">A desktop privacy and security auditing tool designed to help users understand browser-related risk, configuration exposure, and privacy posture.</p>
-  <div class="button-row">
-    <a class="button button-primary" href="https://github.com/tracedowney/AuditOS--Desktop">View on GitHub</a>
-    <a class="button button-secondary" href="https://github.com/tracedowney/AuditOS--Desktop/releases">Download / Releases</a>
+  <div class="case-study-hero">
+    <div class="case-study-hero__copy">
+      <nav class="breadcrumb-row" aria-label="Breadcrumb">
+        <a href="{{ '/projects/' | relative_url }}">Projects</a>
+        <span aria-hidden="true">&gt;</span>
+        <span aria-current="page">AuditOS</span>
+      </nav>
+      <p class="eyebrow">Browser Privacy &amp; Security Auditor</p>
+      <h1>AuditOS</h1>
+      <p class="lead">A desktop privacy and security auditing tool designed to help users understand browser-related risk, configuration exposure, and privacy posture.</p>
+      <div class="button-row">
+        <a class="button button-primary" href="https://github.com/tracedowney/AuditOS--Desktop">View on GitHub</a>
+        <a class="button button-secondary" href="https://github.com/tracedowney/AuditOS--Desktop/releases">Download / Releases</a>
+      </div>
+    </div>
+    <aside class="case-study-hero__visual card" aria-label="AuditOS product preview">
+      <div class="case-study-hero__canvas">
+        <div class="case-study-hero__window">
+          <img class="case-study-hero__window-image" src="{{ '/assets/images/projects/auditos/auditos-behavior-tab.png' | relative_url }}" alt="Muted preview of the AuditOS desktop audit dashboard." />
+        </div>
+        <div class="case-study-hero__icon-shell">
+          <img class="case-study-hero__icon" src="{{ '/assets/images/projects/auditos/auditos-app-icon.svg' | relative_url }}" alt="AuditOS app icon." />
+        </div>
+      </div>
+      <p class="case-study-hero__note">Local-first desktop auditing with visible findings, readable workflows, and privacy-aware reporting.</p>
+    </aside>
   </div>
   <div class="case-study-intro__summary">
     <article class="card prose-card">
