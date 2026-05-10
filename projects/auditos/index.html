@@ -1,0 +1,219 @@
+---
+layout: default
+title: AuditOS — Browser Privacy & Security Auditor
+description: A professional case study page for AuditOS, a desktop privacy and security auditing tool focused on browser-related risk, configuration exposure, and privacy posture.
+body_class: page-project-case-study page-project-auditos
+background_style: logo
+---
+<section class="page-intro page-intro--wide case-study-intro">
+  <nav class="breadcrumb-row" aria-label="Breadcrumb">
+    <a href="{{ '/projects/' | relative_url }}">Projects</a>
+    <span aria-hidden="true">&gt;</span>
+    <span aria-current="page">AuditOS</span>
+  </nav>
+  <p class="eyebrow">Browser Privacy &amp; Security Auditor</p>
+  <h1>AuditOS</h1>
+  <p class="lead">A desktop privacy and security auditing tool designed to help users understand browser-related risk, configuration exposure, and privacy posture.</p>
+  <div class="button-row">
+    <a class="button button-primary" href="https://github.com/tracedowney/AuditOS--Desktop">View on GitHub</a>
+    <a class="button button-secondary" href="https://github.com/tracedowney/AuditOS--Desktop/releases">Download / Releases</a>
+  </div>
+</section>
+
+<section class="section-split case-study-split">
+  <article class="card prose-card">
+    <p class="eyebrow eyebrow--muted">Overview</p>
+    <h2>A practical desktop project built around privacy review and clearer risk reporting.</h2>
+    <p>AuditOS is a desktop application I built to explore local-first privacy auditing, browser configuration review, and user-friendly technical reporting.</p>
+    <p>The project combines my interests in technical support, security awareness, troubleshooting, software design, and practical risk reduction.</p>
+  </article>
+  <aside class="card case-study-aside">
+    <p class="meta-label">Project focus</p>
+    <h3>What the project is designed to support</h3>
+    <div class="pill-cloud" aria-label="AuditOS focus areas">
+      <span class="chip">Local-first auditing</span>
+      <span class="chip">Browser review</span>
+      <span class="chip">Privacy posture</span>
+      <span class="chip">Readable reporting</span>
+    </div>
+    <p>AuditOS is meant to turn scattered browser privacy and security signals into something more understandable, reviewable, and actionable.</p>
+  </aside>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <p class="eyebrow eyebrow--muted">Screenshots</p>
+    <h2>A look at the current desktop workflow.</h2>
+    <p>The current interface already shows the project’s main priorities clearly: local-first onboarding, readable findings, behavior visibility, and baseline comparison.</p>
+  </div>
+  <div class="case-study-gallery">
+    <figure class="card case-study-shot case-study-shot--feature">
+      <img src="{{ '/assets/images/projects/auditos/auditos-findings-summary-full.png' | relative_url }}" alt="AuditOS findings summary showing low overall risk, categorized findings, and recommendations after a scan." />
+      <figcaption>
+        <p class="meta-label">Featured screen</p>
+        <strong>Findings summary and overall risk reporting</strong>
+        <p>The main results view surfaces categorized findings, a readable risk summary, and next-step recommendations without hiding the technical detail.</p>
+      </figcaption>
+    </figure>
+    <div class="case-study-gallery__grid">
+      <figure class="card case-study-shot">
+        <img loading="lazy" src="{{ '/assets/images/projects/auditos/auditos-welcome-modal-terms.png' | relative_url }}" alt="AuditOS welcome dialog explaining local-first auditing, privacy expectations, and terms acceptance." />
+        <figcaption>
+          <p class="meta-label">Onboarding</p>
+          <strong>Privacy expectations are set up front</strong>
+          <p>The first-run experience explains what AuditOS does, what it does not do, and why the tool keeps audit activity local to the user’s machine.</p>
+        </figcaption>
+      </figure>
+      <figure class="card case-study-shot">
+        <img loading="lazy" src="{{ '/assets/images/projects/auditos/auditos-behavior-tab.png' | relative_url }}" alt="AuditOS behavior tab listing observed network connections and process names." />
+        <figcaption>
+          <p class="meta-label">Behavior view</p>
+          <strong>Live behavior is visible in a structured table</strong>
+          <p>The behavior tab makes active connections and observed activity easier to review without forcing the user into raw logs first.</p>
+        </figcaption>
+      </figure>
+      <figure class="card case-study-shot">
+        <img loading="lazy" src="{{ '/assets/images/projects/auditos/auditos-baseline-behavior.png' | relative_url }}" alt="AuditOS baseline behavior view listing DNS, startup, and scheduled task observations since the last scan." />
+        <figcaption>
+          <p class="meta-label">Comparison</p>
+          <strong>Baseline comparison helps users see what changed</strong>
+          <p>AuditOS is designed to support repeat review, so the interface can call out behavior differences and system-state changes over time.</p>
+        </figcaption>
+      </figure>
+      <figure class="card case-study-shot">
+        <img loading="lazy" src="{{ '/assets/images/projects/auditos/auditos-save-baseline-modal.png' | relative_url }}" alt="AuditOS save-baseline modal prompting the user to preserve the current audit for later comparison." />
+        <figcaption>
+          <p class="meta-label">Workflow</p>
+          <strong>Baseline capture is part of the audit loop</strong>
+          <p>Saving a scan for later comparison is treated as a first-class workflow, not an afterthought, which keeps the tool useful beyond a single pass.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <article class="card">
+    <p class="eyebrow eyebrow--muted">The Problem</p>
+    <h2>Browser setup risk is real, but most people never get a clear read on it.</h2>
+    <p>Most users do not have an easy way to understand what their browser setup may expose, how extensions or settings may affect privacy, or where common security gaps may exist. AuditOS was created as a practical tool to make that kind of review more understandable.</p>
+  </article>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <p class="eyebrow eyebrow--muted">What I Built</p>
+    <h2>Core pieces of the application.</h2>
+    <p>AuditOS is structured to keep the experience clear for users while leaving room for the audit system to expand over time.</p>
+  </div>
+  <div class="card-grid case-study-build-grid">
+    <article class="card case-study-build-card">
+      <p class="meta-label">Build area</p>
+      <h3>Python desktop application</h3>
+      <p>Built as a desktop tool to keep the workflow local, direct, and easier for users to trust.</p>
+    </article>
+    <article class="card case-study-build-card">
+      <p class="meta-label">Build area</p>
+      <h3>Local-first audit workflow</h3>
+      <p>Designed around reviewing information on the user’s machine instead of relying on a remote service model.</p>
+    </article>
+    <article class="card case-study-build-card">
+      <p class="meta-label">Build area</p>
+      <h3>Browser privacy/security review</h3>
+      <p>Focused on the kinds of browser settings, extensions, and configurations that shape privacy posture and exposure.</p>
+    </article>
+    <article class="card case-study-build-card">
+      <p class="meta-label">Build area</p>
+      <h3>Modular audit structure</h3>
+      <p>Organized so additional checks and audit categories can be added without forcing a full rewrite later.</p>
+    </article>
+    <article class="card case-study-build-card">
+      <p class="meta-label">Build area</p>
+      <h3>User-focused reporting</h3>
+      <p>Shaped to present technical findings in a way that is still readable for people who are not deeply technical.</p>
+    </article>
+    <article class="card case-study-build-card">
+      <p class="meta-label">Build area</p>
+      <h3>GitHub-based open-source project structure</h3>
+      <p>Set up publicly so the project can support releases, testing, documentation, and outside contribution over time.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading">
+    <p class="eyebrow eyebrow--muted">Skills Demonstrated</p>
+    <h2>Technical and product strengths visible in the work.</h2>
+    <p>The project shows a mix of software implementation, troubleshooting, delivery planning, and privacy-minded product judgment.</p>
+  </div>
+  <div class="case-study-skill-grid">
+    <article class="case-study-skill card"><strong>Python</strong></article>
+    <article class="case-study-skill card"><strong>PySide6 / desktop UI</strong></article>
+    <article class="case-study-skill card"><strong>Troubleshooting</strong></article>
+    <article class="case-study-skill card"><strong>Application packaging</strong></article>
+    <article class="case-study-skill card"><strong>GitHub project organization</strong></article>
+    <article class="case-study-skill card"><strong>Security/privacy awareness</strong></article>
+    <article class="case-study-skill card"><strong>Documentation</strong></article>
+    <article class="case-study-skill card"><strong>Release planning</strong></article>
+  </div>
+</section>
+
+<section class="section section-split case-study-split">
+  <article class="card">
+    <p class="eyebrow eyebrow--muted">Challenges</p>
+    <h2>Building the tool also meant building the project around it well.</h2>
+    <ul class="feature-list">
+      <li>Structuring the app so audits could be expanded over time.</li>
+      <li>Packaging a desktop app cleanly.</li>
+      <li>Balancing technical detail with non-technical usability.</li>
+      <li>Organizing the project for future contributors and testers.</li>
+    </ul>
+  </article>
+  <article class="card">
+    <p class="eyebrow eyebrow--muted">What I Learned</p>
+    <h2>The project improved both the software and the way I present it.</h2>
+    <ul class="feature-list">
+      <li>Better software structure.</li>
+      <li>Release management.</li>
+      <li>Dependency handling.</li>
+      <li>How to present a technical project publicly.</li>
+      <li>The importance of clear documentation and user trust.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="section">
+  <div class="project-feature">
+    <div class="project-feature__copy">
+      <p class="eyebrow eyebrow--muted">Status</p>
+      <h2>Early development, with public testing in view.</h2>
+      <p>AuditOS is currently in early development/testing. It is being prepared for public testing through GitHub releases.</p>
+    </div>
+    <div class="project-feature__details">
+      <article class="project-detail-card">
+        <h3>Current phase</h3>
+        <p>Core project structure and testing readiness are still being developed.</p>
+      </article>
+      <article class="project-detail-card">
+        <h3>Release path</h3>
+        <p>GitHub releases are the intended path for public testing and early distribution.</p>
+      </article>
+      <article class="project-detail-card">
+        <h3>Why it matters</h3>
+        <p>The project is being built to feel trustworthy, understandable, and useful from the first public version onward.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-cta">
+  <div class="cta-card">
+    <p class="eyebrow">Call to action</p>
+    <h2>Follow the project as it moves toward public testing.</h2>
+    <p>AuditOS is being shaped as a real technical project with a public repository, release path, and room to grow.</p>
+    <div class="button-row">
+      <a class="button button-primary" href="https://github.com/tracedowney/AuditOS--Desktop">View GitHub Repository</a>
+      <a class="button button-secondary" href="https://github.com/tracedowney/AuditOS--Desktop/releases">View Releases</a>
+    </div>
+  </div>
+</section>

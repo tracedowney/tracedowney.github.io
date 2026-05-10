@@ -53,6 +53,11 @@ layout: default
           {% endfor %}
         </div>
         {% endif %}
+        {% if lane.feature.link %}
+        <div class="button-row">
+          <a class="button button-secondary" href="{{ lane.feature.link.url | relative_url }}">{{ lane.feature.link.label }}</a>
+        </div>
+        {% endif %}
       </div>
       <div class="project-feature__details">
         {% for detail in lane.feature.details %}

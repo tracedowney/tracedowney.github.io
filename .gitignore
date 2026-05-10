@@ -1,4 +1,12 @@
 .DS_Store
+tmp/
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.bundle/
+vendor/bundle/
+Gemfile.lock
 assets/source/
 logos/
 signatures/

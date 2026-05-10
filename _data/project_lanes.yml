@@ -32,6 +32,9 @@
     body:
       - The value is not in spectacle. It is in helping people move through a repeatable workflow with less friction, clearer status, and fewer missed details.
       - Even without a screenshot gallery, AuditOS belongs at the front of this lane because it shows the kind of software judgment I most enjoy applying.
+    link:
+      label: Read the AuditOS case study
+      url: /projects/auditos/
     chips:
       - Workflow clarity
       - Review-ready records
