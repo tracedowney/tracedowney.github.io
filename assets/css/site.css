@@ -259,32 +259,6 @@ body.background-logo .site-shell::before {
   transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
 }
 
-.site-nav__group {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.site-nav__submenu {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.site-nav__submenu::before {
-  content: ">";
-  color: var(--ink-500);
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.site-nav__child {
-  padding-inline: 0.82rem;
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid rgba(28, 35, 48, 0.08);
-}
-
 .site-nav a:hover,
 .site-nav a:focus-visible {
   background: rgba(188, 90, 54, 0.12);
@@ -1317,11 +1291,6 @@ body.background-logo .site-shell::before {
     justify-content: flex-start;
   }
 
-  .site-nav__group,
-  .site-nav__submenu {
-    flex-wrap: wrap;
-  }
-
   .lane-sidebar--sticky {
     position: static;
   }
@@ -1394,14 +1363,6 @@ body.background-logo .site-shell::before {
 
   .site-nav a {
     flex: 0 0 auto;
-  }
-
-  .site-nav__group {
-    gap: 0.35rem;
-  }
-
-  .site-nav__submenu {
-    gap: 0.35rem;
   }
 
   .brand-site {

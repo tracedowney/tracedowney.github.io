@@ -43,12 +43,7 @@
         <nav class="site-nav" aria-label="Primary navigation">
           <a {% if current_url == '/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/' | relative_url }}">Home</a>
           <a {% if current_url contains '/about/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/about/' | relative_url }}">About</a>
-          <div class="site-nav__group{% if current_url contains '/projects/' %} is-active{% endif %}">
-            <a class="site-nav__parent{% if current_url contains '/projects/' %} is-active{% endif %}"{% if current_url == '/projects/' %} aria-current="page"{% endif %} href="{{ '/projects/' | relative_url }}">Projects</a>
-            <div class="site-nav__submenu" aria-label="Projects navigation">
-              <a class="site-nav__child{% if current_url contains '/projects/auditos/' %} is-active{% endif %}"{% if current_url contains '/projects/auditos/' %} aria-current="page"{% endif %} href="{{ '/projects/auditos/' | relative_url }}">AuditOS</a>
-            </div>
-          </div>
+          <a {% if current_url contains '/projects/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/projects/' | relative_url }}">Projects</a>
           <a {% if current_url contains '/work/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/work/' | relative_url }}">Work</a>
           <a {% if current_url contains '/resume/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/resume/' | relative_url }}">Resume</a>
           <a {% if current_url contains '/contact/' %}class="is-active" aria-current="page"{% endif %} href="{{ '/contact/' | relative_url }}">Contact</a>
