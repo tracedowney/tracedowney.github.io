@@ -23,7 +23,7 @@ background_style: logo
     <aside class="case-study-hero__visual card" aria-label="AuditOS product preview">
       <div class="case-study-hero__canvas">
         <div class="case-study-hero__window">
-          <img class="case-study-hero__window-image" src="{{ '/assets/images/projects/auditos/auditos-behavior-tab.png' | relative_url }}" alt="Muted preview of the AuditOS desktop audit dashboard." />
+          <img class="case-study-hero__window-image" src="{{ '/assets/images/projects/auditos/auditos-behavior-tab-sanitized.png' | relative_url }}" alt="Muted preview of the AuditOS desktop behavior review tab." />
         </div>
         <div class="case-study-hero__icon-shell">
           <img class="case-study-hero__icon" src="{{ '/assets/images/projects/auditos/auditos-app-icon.svg' | relative_url }}" alt="AuditOS app icon." />
@@ -58,32 +58,38 @@ background_style: logo
   </div>
   <div class="case-study-gallery">
     <figure class="card case-study-shot case-study-shot--feature">
-      <img src="{{ '/assets/images/projects/auditos/auditos-behavior-tab.png' | relative_url }}" alt="AuditOS desktop interface showing the main dashboard with risk level, audit controls, and a structured behavior review table." />
+      <img src="{{ '/assets/images/projects/auditos/auditos-findings-summary-full-sanitized.png' | relative_url }}" alt="AuditOS findings tab showing categorized results, overall risk level, and recommendations after a local audit." />
       <figcaption>
-        <strong>Audit Dashboard</strong>
-        <p>Shows the main AuditOS interface where users can begin reviewing browser privacy, security, and configuration details from a single desktop workspace.</p>
+        <strong>Quick Audit Results</strong>
+        <p>Shows the primary findings view with categorized results, overall risk, and follow-up recommendations after a local audit run.</p>
       </figcaption>
     </figure>
     <div class="case-study-gallery__grid">
       <figure class="card case-study-shot">
-        <img loading="lazy" src="{{ '/assets/images/projects/auditos/auditos-findings-summary-full.png' | relative_url }}" alt="AuditOS findings tab showing categorized results, overall risk level, and recommendations after a local audit." />
+        <button class="case-study-shot__trigger" type="button" data-lightbox-trigger aria-label="Open the Behavior Review Tab screenshot">
+          <img loading="lazy" src="{{ '/assets/images/projects/auditos/auditos-behavior-tab-sanitized.png' | relative_url }}" alt="AuditOS behavior tab showing observed connections in a structured desktop review table." />
+        </button>
         <figcaption>
-          <strong>Quick Audit Results</strong>
-          <p>Demonstrates the lightweight audit workflow designed to surface common browser and privacy-related findings quickly without requiring cloud upload.</p>
+          <strong>Behavior Review Tab</strong>
+          <p>Shows the behavior review workspace where observed connections can be sorted and reviewed from the main desktop interface.</p>
         </figcaption>
       </figure>
       <figure class="card case-study-shot">
-        <img loading="lazy" src="{{ '/assets/images/projects/auditos/auditos-behavior-connections.png' | relative_url }}" alt="AuditOS behavior view showing many observed local connections and process names as part of deeper audit visibility." />
+        <button class="case-study-shot__trigger" type="button" data-lightbox-trigger aria-label="Open the Saved Baseline Snapshot screenshot">
+          <img loading="lazy" src="{{ '/assets/images/projects/auditos/auditos-baseline-behavior-sanitized.png' | relative_url }}" alt="AuditOS behavior view after saving a baseline, showing DNS servers, startup items, and scheduled items in a structured review table." />
+        </button>
         <figcaption>
-          <strong>Deep Audit Workflow</strong>
-          <p>Shows the expanded review process for deeper local analysis, designed to support more detailed troubleshooting and visibility over time.</p>
+          <strong>Saved Baseline Snapshot</strong>
+          <p>Shows a baseline review state where DNS entries, startup items, and scheduled items can be compared over time from one structured view.</p>
         </figcaption>
       </figure>
       <figure class="card case-study-shot">
-        <img loading="lazy" src="{{ '/assets/images/projects/auditos/auditos-welcome-modal-terms.png' | relative_url }}" alt="AuditOS welcome dialog describing local-only scans, terms acknowledgement, and the app's non-destructive reporting approach." />
+        <button class="case-study-shot__trigger" type="button" data-lightbox-trigger aria-label="Open the Welcome and Terms Modal screenshot">
+          <img loading="lazy" src="{{ '/assets/images/projects/auditos/auditos-welcome-modal-terms.png' | relative_url }}" alt="AuditOS welcome dialog describing local-only scans, terms acknowledgement, and the app's non-destructive reporting approach." />
+        </button>
         <figcaption>
-          <strong>Local-First Reporting</strong>
-          <p>Highlights the project’s focus on user trust: scans are run locally, findings are presented clearly, and the app does not make automatic changes.</p>
+          <strong>Welcome &amp; Terms Modal</strong>
+          <p>Highlights the onboarding flow that explains local-only scans, terms acknowledgement, and the app’s non-destructive approach before use.</p>
         </figcaption>
       </figure>
     </div>
@@ -202,3 +208,53 @@ background_style: logo
     </div>
   </div>
 </section>
+
+<div class="case-study-lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label="Expanded AuditOS screenshot" tabindex="-1">
+  <img class="case-study-lightbox__image" data-lightbox-image src="" alt="" />
+</div>
+
+<script>
+  (() => {
+    const lightbox = document.querySelector("[data-lightbox]");
+    if (!lightbox) return;
+
+    const lightboxImage = lightbox.querySelector("[data-lightbox-image]");
+    const triggers = document.querySelectorAll("[data-lightbox-trigger]");
+    let activeTrigger = null;
+
+    const closeLightbox = () => {
+      if (lightbox.hidden) return;
+
+      lightbox.hidden = true;
+      document.body.classList.remove("case-study-lightbox-open");
+      lightboxImage.removeAttribute("src");
+      lightboxImage.alt = "";
+
+      if (activeTrigger) {
+        activeTrigger.focus();
+        activeTrigger = null;
+      }
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const sourceImage = trigger.querySelector("img");
+        if (!sourceImage) return;
+
+        activeTrigger = trigger;
+        lightboxImage.src = sourceImage.currentSrc || sourceImage.src;
+        lightboxImage.alt = sourceImage.alt;
+        lightbox.hidden = false;
+        document.body.classList.add("case-study-lightbox-open");
+        lightbox.focus();
+      });
+    });
+
+    lightbox.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+  })();
+</script>
