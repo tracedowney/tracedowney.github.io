@@ -222,7 +222,7 @@ body.background-logo .site-shell::before {
 
 .brand-copy {
   display: grid;
-  gap: 0.18rem;
+  gap: 0;
   min-width: 0;
 }
 
@@ -232,15 +232,6 @@ body.background-logo .site-shell::before {
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1;
-}
-
-.brand-tagline {
-  max-width: 18rem;
-  color: var(--ink-700);
-  font-size: 0.92rem;
-  font-weight: 700;
-  line-height: 1.15;
-  text-wrap: balance;
 }
 
 .site-nav {
@@ -1678,11 +1669,6 @@ body.page-work .page-intro h1 {
 
   .brand-site {
     font-size: 1.08rem;
-  }
-
-  .brand-tagline {
-    max-width: 14rem;
-    font-size: 0.9rem;
   }
 
   .hero-panel__badge {
