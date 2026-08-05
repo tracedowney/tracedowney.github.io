@@ -29,7 +29,7 @@
 <body class="{{ page.body_class }}{% if page.background_style %} background-{{ page.background_style }}{% endif %}">
   <a class="skip-link" href="#content">Skip to content</a>
   <div class="site-shell">
-    <header class="site-header">
+    <header class="site-header" data-site-header>
       <div class="site-header__inner">
         <a class="brand" aria-label="Trace Downey home" href="{{ '/' | relative_url }}">
           <span class="brand-mark" aria-hidden="true">
@@ -92,6 +92,22 @@
   </div>
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    const siteHeader = document.querySelector("[data-site-header]");
+
+    if (siteHeader) {
+      const compactMedia = window.matchMedia("(min-width: 861px)");
+
+      const syncSiteHeader = () => {
+        const shouldCompact = compactMedia.matches && window.scrollY > 48;
+        siteHeader.classList.toggle("is-compact", shouldCompact);
+      };
+
+      syncSiteHeader();
+      window.addEventListener("scroll", syncSiteHeader, { passive: true });
+      window.addEventListener("resize", syncSiteHeader);
+      compactMedia.addEventListener?.("change", syncSiteHeader);
+    }
   </script>
 </body>
 </html>

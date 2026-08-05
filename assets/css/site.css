@@ -162,6 +162,7 @@ body.background-logo .site-shell::before {
   top: 0;
   z-index: 8;
   padding: 1rem 1.25rem 0;
+  transition: padding 220ms ease;
 }
 
 .site-header__inner {
@@ -177,6 +178,7 @@ body.background-logo .site-shell::before {
   background: rgba(255, 250, 244, 0.72);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow-soft);
+  transition: padding 220ms ease, gap 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
 }
 
 .brand {
@@ -186,6 +188,7 @@ body.background-logo .site-shell::before {
   gap: 1.1rem;
   text-decoration: none;
   min-width: 0;
+  transition: gap 220ms ease;
 }
 
 .brand-mark {
@@ -200,6 +203,7 @@ body.background-logo .site-shell::before {
   padding: 0;
   border-radius: 20px;
   background: transparent;
+  transition: width 220ms ease;
 }
 
 .brand-mark img {
@@ -232,6 +236,7 @@ body.background-logo .site-shell::before {
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1;
+  transition: font-size 220ms ease;
 }
 
 .site-nav {
@@ -239,6 +244,7 @@ body.background-logo .site-shell::before {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.55rem;
+  transition: gap 220ms ease;
 }
 
 .site-nav a {
@@ -248,7 +254,74 @@ body.background-logo .site-shell::before {
   border-radius: 999px;
   color: var(--ink-700);
   text-decoration: none;
-  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease, padding 220ms ease;
+}
+
+.site-header.is-compact {
+  padding-top: 0.58rem;
+}
+
+.site-header.is-compact .site-header__inner {
+  gap: 1rem;
+  padding: 0.58rem 1rem 0.58rem 0.9rem;
+}
+
+.site-header.is-compact .brand {
+  gap: 0.85rem;
+}
+
+.site-header.is-compact .brand-mark {
+  width: clamp(3.25rem, 5.3vw, 3.95rem);
+}
+
+.site-header.is-compact .brand-site {
+  font-size: 1.02rem;
+}
+
+.site-header.is-compact .site-nav {
+  gap: 0.38rem;
+}
+
+.site-header.is-compact .site-nav a {
+  padding: 0.44rem 0.74rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-header.is-compact:hover,
+  .site-header.is-compact:focus-within {
+    padding-top: 1rem;
+  }
+
+  .site-header.is-compact:hover .site-header__inner,
+  .site-header.is-compact:focus-within .site-header__inner {
+    gap: 1.5rem;
+    padding: 0.9rem 1.2rem 0.9rem 1rem;
+  }
+
+  .site-header.is-compact:hover .brand,
+  .site-header.is-compact:focus-within .brand {
+    gap: 1.1rem;
+  }
+
+  .site-header.is-compact:hover .brand-mark,
+  .site-header.is-compact:focus-within .brand-mark {
+    width: clamp(4.1rem, 7vw, 5rem);
+  }
+
+  .site-header.is-compact:hover .brand-site,
+  .site-header.is-compact:focus-within .brand-site {
+    font-size: 1.12rem;
+  }
+
+  .site-header.is-compact:hover .site-nav,
+  .site-header.is-compact:focus-within .site-nav {
+    gap: 0.55rem;
+  }
+
+  .site-header.is-compact:hover .site-nav a,
+  .site-header.is-compact:focus-within .site-nav a {
+    padding: 0.62rem 0.9rem;
+  }
 }
 
 .site-nav a:hover,
