@@ -1333,28 +1333,28 @@ body.page-work .page-intro h1 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.about-flow {
-  display: grid;
-  gap: 1rem;
-}
-
-.about-intro-card::after {
+.about-flow::after {
   content: "";
   display: table;
   clear: both;
 }
 
+.about-flow > * + * {
+  margin-top: 1rem;
+}
+
 .about-accent {
   float: right;
-  width: clamp(4.4rem, 7vw, 5.5rem);
+  width: clamp(4.75rem, 7.5vw, 5.9rem);
   margin: 0;
-  margin-left: 0.9rem;
-  margin-bottom: 0.65rem;
+  margin-left: 1rem;
+  margin-bottom: 1.2rem;
   padding: 0.45rem;
   border: 1px solid rgba(28, 35, 48, 0.08);
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.48));
   box-shadow: var(--shadow-soft);
+  shape-outside: inset(0 round 18px);
 }
 
 .about-accent__image {
@@ -1656,9 +1656,9 @@ body.page-work .page-intro h1 {
   }
 
   .about-accent {
-    width: 4.35rem;
-    margin-left: 0.7rem;
-    margin-bottom: 0.5rem;
+    width: 4.4rem;
+    margin-left: 0.75rem;
+    margin-bottom: 0.9rem;
   }
 
   .site-nav a {
