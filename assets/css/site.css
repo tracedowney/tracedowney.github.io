@@ -1408,28 +1408,49 @@ body.page-work .page-intro h1 {
 
 .about-flow {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(10rem, 16vw, 13rem);
-  gap: 1rem;
+  gap: 2rem;
+}
+
+.about-top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(11rem, 18vw, 14rem);
+  gap: 1.5rem;
   align-items: start;
 }
 
-.about-flow > .card:first-of-type {
-  grid-column: 1;
-  grid-row: 1;
+.about-copy-stack {
+  display: grid;
+  gap: 2rem;
 }
 
-.about-flow > .card:nth-of-type(2) {
-  grid-column: 1;
-  grid-row: 2;
+.about-section {
+  max-width: 58rem;
 }
 
-.about-flow > .card:nth-of-type(n + 3) {
-  grid-column: 1 / -1;
+.about-section h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-bottom: 0.8rem;
+}
+
+.about-section p + p {
+  margin-top: 1rem;
+}
+
+.about-hero-copy h1 {
+  max-width: none;
+  font-size: clamp(2.4rem, 4.4vw, 4.2rem);
+  text-wrap: pretty;
+}
+
+.about-hero-copy .lead {
+  max-width: 34rem;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--ink-700);
 }
 
 .about-accent {
-  grid-column: 2;
-  grid-row: 1 / span 2;
   width: 100%;
   margin: 0;
   padding: 0.45rem;
@@ -1642,8 +1663,12 @@ body.page-work .page-intro h1 {
   .resume-grid,
   .contact-grid,
   .hero-summary-grid,
-  .about-flow {
+  .about-top-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-copy-stack {
+    gap: 1.7rem;
   }
 
   .hero-panel__visual {
@@ -1739,10 +1764,8 @@ body.page-work .page-intro h1 {
   }
 
   .about-accent {
-    grid-column: 1;
-    grid-row: auto;
     justify-self: end;
-    width: min(7rem, 28vw);
+    width: min(8.5rem, 34vw);
   }
 
   .site-nav a {
