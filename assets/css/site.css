@@ -1446,22 +1446,18 @@ body.page-work .page-intro h1 {
 
 .about-accent {
   float: right;
-  width: clamp(10rem, 16vw, 12.5rem);
-  margin: 0 0 1rem 1.4rem;
-  padding: 0.45rem;
-  border: 1px solid rgba(28, 35, 48, 0.08);
-  border-radius: 24px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.48));
-  box-shadow: var(--shadow-soft);
+  width: min(15rem, 30vw);
+  margin: 0.3rem 0 1rem 1.4rem;
 }
 
 .about-accent__image {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 675 / 1200;
   object-fit: cover;
   object-position: center 28%;
-  border-radius: 18px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
 }
 
 .metric-card {
@@ -1756,8 +1752,8 @@ body.page-work .page-intro h1 {
   .about-accent {
     float: none;
     display: block;
-    width: min(10rem, 42vw);
-    margin: 0 0 1rem auto;
+    width: min(12rem, 48vw);
+    margin: 0.2rem auto 1.2rem;
   }
 
   .site-nav a {
