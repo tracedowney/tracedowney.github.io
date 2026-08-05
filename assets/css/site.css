@@ -1333,28 +1333,37 @@ body.page-work .page-intro h1 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.about-flow::after {
-  content: "";
-  display: table;
-  clear: both;
+.about-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(10rem, 16vw, 13rem);
+  gap: 1rem;
+  align-items: start;
 }
 
-.about-flow > * + * {
-  margin-top: 1rem;
+.about-flow > .card:first-of-type {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.about-flow > .card:nth-of-type(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.about-flow > .card:nth-of-type(n + 3) {
+  grid-column: 1 / -1;
 }
 
 .about-accent {
-  float: right;
-  width: clamp(4.75rem, 7.5vw, 5.9rem);
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 100%;
   margin: 0;
-  margin-left: 1rem;
-  margin-bottom: 1.2rem;
   padding: 0.45rem;
   border: 1px solid rgba(28, 35, 48, 0.08);
   border-radius: 24px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.48));
   box-shadow: var(--shadow-soft);
-  shape-outside: inset(0 round 18px);
 }
 
 .about-accent__image {
@@ -1559,7 +1568,8 @@ body.page-work .page-intro h1 {
   .stack-grid,
   .resume-grid,
   .contact-grid,
-  .hero-summary-grid {
+  .hero-summary-grid,
+  .about-flow {
     grid-template-columns: 1fr;
   }
 
@@ -1656,9 +1666,10 @@ body.page-work .page-intro h1 {
   }
 
   .about-accent {
-    width: 4.4rem;
-    margin-left: 0.75rem;
-    margin-bottom: 0.9rem;
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: end;
+    width: min(7rem, 28vw);
   }
 
   .site-nav a {
