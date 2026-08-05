@@ -1342,6 +1342,38 @@ body.page-work .page-intro h1 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.about-flow {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+}
+
+.about-accent {
+  width: clamp(7.5rem, 14vw, 10rem);
+  justify-self: end;
+  margin: 0;
+  padding: 0.45rem;
+  border: 1px solid rgba(28, 35, 48, 0.08);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.48));
+  box-shadow: var(--shadow-soft);
+}
+
+.about-accent__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: 18px;
+}
+
 .metric-card {
   display: grid;
   gap: 0.55rem;
@@ -1475,6 +1507,7 @@ body.page-work .page-intro h1 {
   .lane-explorer,
   .project-shell,
   .split-layout,
+  .about-intro-grid,
   .site-footer__grid {
     grid-template-columns: 1fr;
   }
@@ -1537,6 +1570,10 @@ body.page-work .page-intro h1 {
   .contact-grid,
   .hero-summary-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-accent {
+    justify-self: start;
   }
 
   .hero-panel__visual {
@@ -1629,6 +1666,10 @@ body.page-work .page-intro h1 {
     flex-wrap: nowrap;
     overflow-x: auto;
     padding-bottom: 0.1rem;
+  }
+
+  .about-accent {
+    width: 7rem;
   }
 
   .site-nav a {
