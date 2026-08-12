@@ -6,3 +6,80 @@ body_class: page-project-lane page-project-drone
 background_style: signature
 lane_slug: drone-footage
 ---
+<section class="section">
+  <div class="project-feature project-feature--aerial project-feature--media">
+    <div class="project-feature__copy">
+      <h2>Selected aerial reels.</h2>
+      <p class="project-feature__lede">These short edits are the clearest examples of how I want drone footage to function on the site: controlled, atmospheric, and useful for reading a place.</p>
+      <p>The goal is not constant motion. It is using height, movement, and sequence to reveal something ground-level images cannot always carry on their own.</p>
+      <p>Each reel below is short on purpose so the footage stays curated and the page stays readable.</p>
+      <div class="pill-cloud" aria-label="Drone footage focus areas">
+        <span class="chip">Scale and geography</span>
+        <span class="chip">Atmosphere without clutter</span>
+        <span class="chip">Place-based documentation</span>
+        <span class="chip">Short curated edits</span>
+      </div>
+    </div>
+    <div class="project-feature__media">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="{{ '/assets/images/projects/drone/forest-overlook-showcase-poster.jpg' | relative_url }}"
+        aria-label="Drone footage sweeping over a forest overlook.">
+        <source src="{{ '/assets/videos/drone/forest-overlook-showcase.mp4' | relative_url }}" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="video-showcase-grid">
+    <article class="card video-card">
+      <div class="video-card__frame">
+        <video controls preload="metadata" playsinline poster="{{ '/assets/images/projects/drone/beach-showcase-poster.jpg' | relative_url }}">
+          <source src="{{ '/assets/videos/drone/beach-showcase.mp4' | relative_url }}" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-card__body">
+        <h3>Fog and shoreline</h3>
+        <p>A quieter coastal reel that leans on atmosphere, sea stacks, and gentle motion instead of speed.</p>
+      </div>
+    </article>
+    <article class="card video-card">
+      <div class="video-card__frame">
+        <video controls preload="metadata" playsinline poster="{{ '/assets/images/projects/drone/golden-hour-rural-showcase-poster.jpg' | relative_url }}">
+          <source src="{{ '/assets/videos/drone/golden-hour-rural-showcase.mp4' | relative_url }}" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-card__body">
+        <h3>Golden hour property context</h3>
+        <p>A warmer rural cut focused on land, layout, and the way late light changes how a place reads from above.</p>
+      </div>
+    </article>
+    <article class="card video-card">
+      <div class="video-card__frame">
+        <video controls preload="metadata" playsinline poster="{{ '/assets/images/projects/drone/twilight-field-showcase-poster.jpg' | relative_url }}">
+          <source src="{{ '/assets/videos/drone/twilight-field-showcase.mp4' | relative_url }}" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-card__body">
+        <h3>Twilight field study</h3>
+        <p>A dusk reel where the fading light and slower movement do most of the work.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section section-cta">
+  <div class="cta-card">
+    <h2>Drone footage belongs in the record when it adds real context.</h2>
+    <p>If the right angle is the one from above, I want the footage to clarify the place, the scale, or the progression of the work instead of just decorating it.</p>
+    <div class="button-row">
+      <a class="button button-primary" href="{{ '/contact/' | relative_url }}">Ask about a project</a>
+      <a class="button button-secondary" href="{{ '/rights/' | relative_url }}">Read rights &amp; permissions</a>
+    </div>
+  </div>
+</section>

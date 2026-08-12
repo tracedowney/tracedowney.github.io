@@ -69,5 +69,10 @@ layout: default
       </div>
     </section>
     {% endif %}
+
+    {% assign page_content = content | strip %}
+    {% if page_content != "" %}
+      {{ content }}
+    {% endif %}
   </article>
 </section>

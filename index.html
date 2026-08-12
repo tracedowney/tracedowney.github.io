@@ -28,15 +28,32 @@ background_style: home
       </div>
     </div>
   </div>
-  <aside class="hero-panel hero-panel--story card">
+  <aside class="hero-panel hero-panel--story hero-panel--mosaic card">
     <div class="hero-panel__visual">
-      <img class="hero-panel__portrait" src="{{ '/assets/images/trace-headshot.jpg' | relative_url }}" alt="Trace Downey smiling in a casual portrait." />
-      <span class="hero-panel__badge" aria-hidden="true">
-        <img src="{{ '/assets/images/trace-tree-logo.svg' | relative_url }}" alt="" />
-      </span>
+      <div class="hero-media-grid" aria-label="Selected project imagery">
+        <figure class="hero-media-card hero-media-card--wide">
+          <video
+            class="hero-media-card__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="{{ '/assets/images/projects/drone/beach-showcase-poster.jpg' | relative_url }}"
+            aria-label="Drone footage of a foggy beach with waves and sea stacks.">
+            <source src="{{ '/assets/videos/drone/beach-showcase.mp4' | relative_url }}" type="video/mp4" />
+          </video>
+        </figure>
+        <figure class="hero-media-card">
+          <img src="{{ '/assets/images/projects/renovation/house-front-drive.jpg' | relative_url }}" alt="A house and driveway framed by trees in late afternoon light." />
+        </figure>
+        <figure class="hero-media-card">
+          <img src="{{ '/assets/images/projects/origami/origami-rose-copper.jpg' | relative_url }}" alt="A copper-colored paper rose on a stem against a textured wall." />
+        </figure>
+      </div>
     </div>
     <div class="hero-panel__body">
-      <h2>A broad body of work with one through-line.</h2>
+      <h2>Selected frames from across the portfolio.</h2>
       <p>Some projects begin in software. Others begin with a material, a tool, or a camera. Across all of them, the pattern is the same: notice what is off, clarify the structure, and follow through until the result feels sound.</p>
       <p>This site is organized so each kind of work can keep the right tone and level of detail without losing the connective logic underneath it.</p>
     </div>
