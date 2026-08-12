@@ -8,13 +8,22 @@ background_style: home
 <section class="hero">
   <div class="hero-copy">
     <h1>Software, systems, visual work, and craft in one portfolio.</h1>
-    <p class="lead">Trace Downey&rsquo;s work spans product thinking, documentation, compliance-minded operations, photography, and skilled making. The common thread is clear judgment, patient execution, and work that holds up once it leaves draft mode.</p>
+    <p class="lead">I build software, documentation, and visual work with the same standard: make it understandable, make it useful, and make it hold up.</p>
     <div class="button-row">
       <a class="button button-primary" href="/projects/">Explore projects</a>
       <a class="button button-secondary" href="/about/">Meet Trace</a>
     </div>
     <a class="hero-copy__feature" href="/projects/drone-footage/">
-      <img src="{{ '/assets/images/projects/drone/forest-overlook-showcase-poster.jpg' | relative_url }}" alt="Wide aerial view over a redwood forest with coastal fog." />
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="{{ '/assets/images/projects/drone/forest-overlook-showcase-poster.jpg' | relative_url }}"
+        aria-label="Wide aerial view over a redwood forest with coastal fog.">
+        <source src="{{ '/assets/videos/drone/forest-overlook-showcase.mp4' | relative_url }}" type="video/mp4" />
+      </video>
       <span class="hero-copy__feature-badge">Drone footage</span>
     </a>
   </div>
@@ -24,7 +33,7 @@ background_style: home
     </div>
     <div class="hero-panel__body hero-panel__body--compact">
       <p class="eyebrow">Trace Downey</p>
-      <p class="hero-panel__summary">Technical problem-solver working across software, documentation, visual storytelling, and hands-on craft.</p>
+      <p class="hero-panel__summary">Technical problem-solver in Central Texas.</p>
     </div>
   </aside>
   <div class="hero-summary-grid hero-summary-grid--band" aria-label="Trace Downey summary">
@@ -44,64 +53,41 @@ background_style: home
 </section>
 
 <section class="section">
-  <div class="lane-explorer">
-    <aside class="lane-sidebar card">
-      <div class="lane-sidebar__intro">
-        <h2>Project lanes</h2>
-        <p>Choose the lane first, then open the depth that fits the work.</p>
-      </div>
-      {% include lane-menu.html %}
-    </aside>
-    <div class="lane-explorer__panel card">
-      <h2>Start with the lane that matches the work.</h2>
-      <p>The site is organized by medium so each body of work can keep the right context, tone, and level of detail.</p>
-      <div class="lane-group-grid">
-        <article class="lane-group-card">
-          <h3>Professional lanes</h3>
-          <p>App development, jewelry, upholstery, and woodworking lean more public-facing and presentation-ready.</p>
-        </article>
-        <article class="lane-group-card">
-          <h3>Personal lanes</h3>
-          <p>Photography, drone footage, origami, quilting, and renovation hold more of the process, place, and archive side of the site.</p>
-        </article>
-      </div>
-    </div>
+  <div class="section-heading section-heading--compact">
+    <h2>Project lanes</h2>
+    <p>Choose the lane that matches what you want to see.</p>
+  </div>
+  <div class="home-lane-grid">
+    {% for item in site.data.project_lanes %}
+    <a class="home-lane-card home-lane-card--{{ item.theme }}" href="{{ item.url | relative_url }}">
+      <strong>{{ item.title }}</strong>
+      <p>{{ item.summary }}</p>
+    </a>
+    {% endfor %}
   </div>
 </section>
 
-<section class="section section-split">
-  <div class="card prose-card">
-    <h2>The range matters less than whether the structure makes it readable.</h2>
-    <p>This site is not trying to flatten everything into one generic brand story. It separates the work clearly so the patterns can show up on their own.</p>
+<section class="section">
+  <div class="section-heading section-heading--compact">
+    <h2>Start here</h2>
+    <p>Pick the fastest route to the part you actually care about.</p>
   </div>
-  <div class="stack-grid">
-    <a class="link-tile" href="/about/">
-      <strong>About</strong>
-      <p>Background, working style, and the standards that connect the rest.</p>
-    </a>
-    <a class="link-tile" href="/work/">
+  <div class="home-entry-grid">
+    <a class="home-entry-card" href="/work/">
       <strong>Work</strong>
-      <p>The professional problems I solve best.</p>
+      <p>The professional side of the portfolio.</p>
     </a>
-    <a class="link-tile" href="/contact/">
-      <strong>Contact</strong>
-      <p>Project inquiries, permissions questions, and the cleanest way to reach me.</p>
-    </a>
-    <a class="link-tile" href="/resume/">
+    <a class="home-entry-card" href="/resume/">
       <strong>Resume</strong>
-      <p>A public-facing summary of experience in audit, compliance, support, and operations.</p>
+      <p>A quick experience snapshot.</p>
     </a>
-  </div>
-</section>
-
-<section class="section section-cta">
-  <div class="cta-card">
-    <h2>Start where your reason for visiting is clearest.</h2>
-    <p>Projects is the full archive. Work and Resume are the fastest route if you are here for the professional side.</p>
-    <div class="button-row">
-      <a class="button button-primary" href="/projects/">Browse projects</a>
-      <a class="button button-secondary" href="/about/">Read about Trace</a>
-    </div>
-    <p class="subtle subtle--spaced">Rights and permissions are outlined <a href="/rights/">here</a>.</p>
+    <a class="home-entry-card" href="/about/">
+      <strong>About</strong>
+      <p>How I work and what connects the rest.</p>
+    </a>
+    <a class="home-entry-card" href="/contact/">
+      <strong>Contact</strong>
+      <p>Project inquiries and permissions questions.</p>
+    </a>
   </div>
 </section>
