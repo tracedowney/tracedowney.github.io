@@ -534,14 +534,47 @@ body.page-work .page-intro h1 {
 
 .hero-panel__visual {
   position: relative;
-  min-height: 18rem;
-  padding: 0.95rem;
+  overflow: hidden;
+  min-height: 22rem;
+  aspect-ratio: 4 / 5;
   border-radius: calc(var(--radius-lg) - 6px);
   background: linear-gradient(160deg, rgba(255, 250, 244, 0.9), rgba(232, 223, 209, 0.78));
 }
 
+.hero-panel__portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.hero-panel__badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: inline-grid;
+  place-items: center;
+  overflow: hidden;
+  width: 5.6rem;
+  height: 5.6rem;
+  padding: 0.18rem;
+  border: 1px solid rgba(28, 35, 48, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 250, 244, 0.92);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-panel__badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .hero-panel--mosaic .hero-panel__visual {
   overflow: visible;
+  min-height: 18rem;
+  aspect-ratio: auto;
+  padding: 0.95rem;
 }
 
 .hero-media-grid {
@@ -1736,6 +1769,10 @@ body.page-work .page-intro h1 {
     grid-template-columns: 1fr;
   }
 
+  .hero-panel__visual {
+    min-height: 18rem;
+  }
+
   .project-feature,
   .project-feature--media {
     grid-template-columns: 1fr;
@@ -1784,9 +1821,6 @@ body.page-work .page-intro h1 {
     grid-template-columns: 1fr;
   }
 
-  .hero-panel__visual {
-    min-height: 0;
-  }
 }
 
 @media (max-width: 640px) {
