@@ -364,7 +364,7 @@ body.background-logo .site-shell::before {
 .hero-copy {
   position: relative;
   display: grid;
-  gap: 1rem;
+  gap: 1.15rem;
   overflow: hidden;
   padding: 2.6rem;
   border-radius: clamp(28px, 4vw, 44px);
@@ -477,6 +477,55 @@ body.page-work .page-intro h1 {
 
 .button-row {
   margin-top: 1.8rem;
+}
+
+.hero-copy__feature {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin-top: 0.35rem;
+  border: 1px solid rgba(28, 35, 48, 0.08);
+  border-radius: 26px;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 16 / 6;
+  text-decoration: none;
+}
+
+.hero-copy__feature::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 55%;
+  background: linear-gradient(180deg, rgba(17, 24, 38, 0), rgba(17, 24, 38, 0.34));
+  pointer-events: none;
+}
+
+.hero-copy__feature img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+}
+
+.hero-copy__feature-badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.28rem 0.78rem;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  background: rgba(17, 24, 38, 0.56);
+  color: #fffaf4;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(14px);
 }
 
 .button {
@@ -629,8 +678,8 @@ body.page-work .page-intro h1 {
 
 .hero-panel__summary {
   color: var(--ink-700);
-  font-size: 0.98rem;
-  line-height: 1.6;
+  font-size: 0.94rem;
+  line-height: 1.55;
 }
 
 .hero-panel__body .mini-list {
@@ -1785,6 +1834,10 @@ body.page-work .page-intro h1 {
     min-height: 18rem;
   }
 
+  .hero-copy__feature {
+    aspect-ratio: 16 / 7;
+  }
+
   .project-feature,
   .project-feature--media {
     grid-template-columns: 1fr;
@@ -1880,6 +1933,11 @@ body.page-work .page-intro h1 {
   .cta-card,
   .hero-panel {
     padding: 1.4rem;
+  }
+
+  .hero-copy__feature {
+    border-radius: 22px;
+    aspect-ratio: 16 / 8;
   }
 
   .case-study-hero__visual {
