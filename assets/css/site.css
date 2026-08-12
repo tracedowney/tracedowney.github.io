@@ -343,10 +343,7 @@ body.background-logo .site-shell::before {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.6fr);
-  gap: 1.5rem;
-  align-items: start;
+  display: block;
   padding-top: 1.25rem;
 }
 
@@ -418,6 +415,96 @@ body.page-work .page-intro h1 {
   margin-top: 0.2rem;
   font-size: 1.1rem;
   color: var(--ink-700);
+}
+
+.home-hero-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.24fr) minmax(280px, 0.76fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  overflow: hidden;
+  padding: 1.9rem;
+}
+
+.home-hero-card::after {
+  content: "";
+  position: absolute;
+  right: -5rem;
+  bottom: -5rem;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(188, 90, 54, 0.14), rgba(188, 90, 54, 0));
+  pointer-events: none;
+}
+
+.home-hero__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+}
+
+.home-hero__copy .eyebrow,
+.home-hero__profile-copy .eyebrow,
+.home-feature-split__copy .eyebrow {
+  margin-bottom: 0;
+}
+
+.home-hero__copy p {
+  max-width: 62ch;
+  color: var(--ink-700);
+}
+
+.home-hero__facts {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-hero__facts li {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(28, 35, 48, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.42);
+  color: var(--ink-800);
+  line-height: 1.45;
+}
+
+.home-hero__profile {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 0.65rem;
+  border: 1px solid rgba(28, 35, 48, 0.08);
+  border-radius: calc(var(--radius-lg) - 4px);
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.home-hero__portrait-frame {
+  overflow: hidden;
+  min-height: 23rem;
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(255, 250, 244, 0.92), rgba(232, 223, 209, 0.78));
+}
+
+.home-hero__profile-copy {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0 0.35rem 0.2rem;
+}
+
+.home-hero__profile-text {
+  margin: 0;
+  color: var(--ink-700);
+  font-size: 0.98rem;
+  line-height: 1.6;
 }
 
 .hero-summary-grid {
@@ -699,10 +786,15 @@ body.page-work .page-intro h1 {
   margin-bottom: 0.35rem;
 }
 
+.selected-work-grid,
 .home-lane-grid,
 .home-entry-grid {
   display: grid;
   gap: 1rem;
+}
+
+.selected-work-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .home-lane-grid {
@@ -711,6 +803,70 @@ body.page-work .page-intro h1 {
 
 .home-entry-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.selected-work-card {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 28px;
+  background: linear-gradient(180deg, var(--surface) 0%, rgba(255, 255, 255, 0.46) 100%);
+  box-shadow: var(--shadow);
+  color: var(--ink-900);
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.selected-work-card:hover,
+.selected-work-card:focus-visible,
+.home-lane-card:hover,
+.home-lane-card:focus-visible {
+  transform: translateY(-2px);
+}
+
+.selected-work-card__media {
+  overflow: hidden;
+  min-height: 14.5rem;
+  border-bottom: 1px solid rgba(28, 35, 48, 0.08);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.selected-work-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selected-work-card__body {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1.25rem;
+}
+
+.selected-work-card__body strong {
+  font-size: 1.4rem;
+}
+
+.selected-work-card__body p {
+  color: var(--ink-700);
+}
+
+.selected-work-card--screen .selected-work-card__media {
+  background: linear-gradient(180deg, rgba(24, 29, 39, 0.92), rgba(40, 46, 58, 0.9));
+}
+
+.selected-work-card--screen .selected-work-card__media img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.selected-work-card--photo .selected-work-card__media img {
+  object-position: center 52%;
+}
+
+.selected-work-card--reno .selected-work-card__media img {
+  object-position: center;
 }
 
 .home-lane-card,
@@ -725,6 +881,7 @@ body.page-work .page-intro h1 {
   box-shadow: var(--shadow);
   color: var(--ink-900);
   text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .home-lane-card strong,
@@ -771,6 +928,44 @@ body.page-work .page-intro h1 {
 .home-lane-card--build {
   border-color: rgba(116, 128, 66, 0.18);
   background: linear-gradient(180deg, rgba(231, 237, 214, 0.82), rgba(255, 255, 255, 0.5));
+}
+
+.home-feature-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.home-feature-split__media {
+  display: block;
+  overflow: hidden;
+  min-height: 21rem;
+  border-radius: calc(var(--radius-lg) - 6px);
+}
+
+.home-feature-split__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-feature-split__copy {
+  display: grid;
+  gap: 0.85rem;
+  align-content: center;
+}
+
+.home-feature-split__copy h2 {
+  margin-bottom: 0.1rem;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+
+.home-feature-split__copy p {
+  color: var(--ink-700);
 }
 
 .hero-panel__body .mini-list {
@@ -1893,7 +2088,8 @@ body.page-work .page-intro h1 {
 }
 
 @media (max-width: 1080px) {
-  .hero,
+  .home-hero-card,
+  .home-feature-split,
   .section-split,
   .lane-explorer,
   .project-shell,
@@ -1906,6 +2102,7 @@ body.page-work .page-intro h1 {
   .domain-grid,
   .card-grid,
   .lane-grid,
+  .selected-work-grid,
   .home-lane-grid,
   .home-entry-grid,
   .lane-group-grid,
@@ -1924,6 +2121,11 @@ body.page-work .page-intro h1 {
   }
 
   .hero-panel__visual--profile {
+    min-height: 18rem;
+  }
+
+  .home-hero__portrait-frame,
+  .home-feature-split__media {
     min-height: 18rem;
   }
 
@@ -2028,6 +2230,10 @@ body.page-work .page-intro h1 {
     padding: 1.4rem;
   }
 
+  .home-hero-card {
+    padding: 1.4rem;
+  }
+
   .hero-copy__feature {
     border-radius: 22px;
     aspect-ratio: 16 / 8;
@@ -2059,6 +2265,7 @@ body.page-work .page-intro h1 {
   .domain-grid,
   .card-grid,
   .lane-grid,
+  .selected-work-grid,
   .home-lane-grid,
   .home-entry-grid,
   .lane-group-grid,
@@ -2093,5 +2300,10 @@ body.page-work .page-intro h1 {
 
   .brand-site {
     font-size: 1.08rem;
+  }
+
+  .home-hero__portrait-frame,
+  .home-feature-split__media {
+    min-height: 15rem;
   }
 }

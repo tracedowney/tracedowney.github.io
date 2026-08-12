@@ -6,56 +6,91 @@ body_class: page-home
 background_style: home
 ---
 <section class="hero">
-  <div class="hero-copy">
-    <h1>Software, systems, visual work, and craft in one portfolio.</h1>
-    <p class="lead">I build software, documentation, and visual work with the same standard: make it understandable, make it useful, and make it hold up.</p>
-    <div class="button-row">
-      <a class="button button-primary" href="/projects/">Explore projects</a>
-      <a class="button button-secondary" href="/about/">Meet Trace</a>
+  <div class="home-hero-card card">
+    <div class="home-hero__copy">
+      <p class="eyebrow">Trace Downey</p>
+      <h1>I figure out how things work and make them work better.</h1>
+      <p class="lead">This site pulls together software, systems work, documentation, photography, and hands-on project work.</p>
+      <p>I do my best work where clarity, judgment, and follow-through all matter. If you want the short version, start with a project. If you want the professional version, head to Work or Resume.</p>
+      <ul class="home-hero__facts">
+        <li>Technical support and systems thinking</li>
+        <li>Documentation, workflow, and product judgment</li>
+        <li>Visual work, craft, and long-form projects</li>
+      </ul>
+      <div class="button-row">
+        <a class="button button-primary" href="/projects/">Browse projects</a>
+        <a class="button button-secondary" href="/work/">See the work side</a>
+      </div>
     </div>
-    <a class="hero-copy__feature" href="/projects/drone-footage/">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-        poster="{{ '/assets/images/projects/drone/forest-overlook-showcase-poster.jpg' | relative_url }}"
-        aria-label="Wide aerial view over a redwood forest with coastal fog.">
-        <source src="{{ '/assets/videos/drone/forest-overlook-showcase.mp4' | relative_url }}" type="video/mp4" />
-      </video>
-      <span class="hero-copy__feature-badge">Drone footage</span>
+    <aside class="home-hero__profile">
+      <div class="home-hero__portrait-frame">
+        <img class="hero-panel__portrait" src="{{ '/assets/images/trace-headshot.jpg' | relative_url }}" alt="Trace Downey smiling in a casual portrait." />
+      </div>
+      <div class="home-hero__profile-copy">
+        <p class="eyebrow eyebrow--muted">Central Texas</p>
+        <p class="home-hero__profile-text">Enterprise support background, compliance-minded habits, and a portfolio built around work that can stand up to a closer look.</p>
+        <p class="hero-panel__summary">The fuller background is on the <a href="{{ '/about/' | relative_url }}">About page</a>.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-heading section-heading--compact">
+    <h2>Start with the work.</h2>
+    <p>A few strong entry points.</p>
+  </div>
+  <div class="selected-work-grid">
+    <a class="selected-work-card selected-work-card--screen" href="/projects/auditos/">
+      <div class="selected-work-card__media">
+        <img src="{{ '/assets/images/projects/auditos/auditos-findings-summary-full-sanitized.png' | relative_url }}" alt="AuditOS findings view showing categorized results and recommendations in a dark desktop interface." />
+      </div>
+      <div class="selected-work-card__body">
+        <strong>AuditOS</strong>
+        <p>A desktop tool built to make privacy and security review clearer, calmer, and easier to trust.</p>
+      </div>
+    </a>
+    <a class="selected-work-card selected-work-card--photo" href="/projects/photography/">
+      <div class="selected-work-card__media">
+        <img src="{{ '/assets/images/projects/photography/mosaic-wall-angle.jpg' | relative_url }}" alt="A colorful mosaic wall photographed at an angle inside an industrial space." />
+      </div>
+      <div class="selected-work-card__body">
+        <strong>Photography</strong>
+        <p>Still images used for atmosphere, documentation, and the details that make a place memorable.</p>
+      </div>
+    </a>
+    <a class="selected-work-card selected-work-card--reno" href="/projects/renovation/">
+      <div class="selected-work-card__media">
+        <img src="{{ '/assets/images/projects/renovation/house-kitchen-refresh.jpg' | relative_url }}" alt="Bright kitchen after a renovation refresh." />
+      </div>
+      <div class="selected-work-card__body">
+        <strong>Renovation</strong>
+        <p>Long-form house work where planning, repair, and follow-through matter as much as the finish.</p>
+      </div>
     </a>
   </div>
-  <aside class="hero-panel hero-panel--profile card">
-    <div class="hero-panel__visual hero-panel__visual--profile">
-      <img class="hero-panel__portrait" src="{{ '/assets/images/trace-headshot.jpg' | relative_url }}" alt="Trace Downey smiling in a casual portrait." />
-    </div>
-    <div class="hero-panel__body hero-panel__body--compact">
-      <p class="eyebrow">Trace Downey</p>
-      <p class="hero-panel__summary">Technical problem-solver in Central Texas.</p>
-    </div>
-  </aside>
-  <div class="hero-summary-grid hero-summary-grid--band" aria-label="Trace Downey summary">
-    <div class="hero-summary-item">
-      <strong>20+ years</strong>
-      <span>Experience across compliance-heavy operations, internal controls, customer support, and process work.</span>
-    </div>
-    <div class="hero-summary-item">
-      <strong>Digital work</strong>
-      <span>Websites, workflows, documentation, and product decisions shaped around real use.</span>
-    </div>
-    <div class="hero-summary-item">
-      <strong>Material work</strong>
-      <span>Furniture, textiles, wood, paper, photography, and other projects approached with the same standards.</span>
+</section>
+
+<section class="section">
+  <div class="home-feature-split card">
+    <a class="home-feature-split__media" href="/projects/drone-footage/">
+      <img src="{{ '/assets/images/projects/drone/beach-showcase-poster.jpg' | relative_url }}" alt="Misty shoreline with sea stacks seen from above." />
+    </a>
+    <div class="home-feature-split__copy">
+      <p class="eyebrow">Aerial perspective</p>
+      <h2>The footage earns its place when it adds context.</h2>
+      <p>The aerial work belongs on the site when it helps a place read faster: coastline, land, scale, layout, or atmosphere that supports the story instead of replacing it.</p>
+      <div class="button-row">
+        <a class="button button-secondary" href="/projects/drone-footage/">View aerial work</a>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="section-heading section-heading--compact">
-    <h2>Project lanes</h2>
-    <p>Choose the lane that matches what you want to see.</p>
+    <h2>Browse the full archive.</h2>
+    <p>Every project lane has its own tone, visuals, and level of detail.</p>
   </div>
   <div class="home-lane-grid">
     {% for item in site.data.project_lanes %}
@@ -64,30 +99,5 @@ background_style: home
       <p>{{ item.summary }}</p>
     </a>
     {% endfor %}
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-heading section-heading--compact">
-    <h2>Start here</h2>
-    <p>Pick the fastest route to the part you actually care about.</p>
-  </div>
-  <div class="home-entry-grid">
-    <a class="home-entry-card" href="/work/">
-      <strong>Work</strong>
-      <p>The professional side of the portfolio.</p>
-    </a>
-    <a class="home-entry-card" href="/resume/">
-      <strong>Resume</strong>
-      <p>A quick experience snapshot.</p>
-    </a>
-    <a class="home-entry-card" href="/about/">
-      <strong>About</strong>
-      <p>How I work and what connects the rest.</p>
-    </a>
-    <a class="home-entry-card" href="/contact/">
-      <strong>Contact</strong>
-      <p>Project inquiries and permissions questions.</p>
-    </a>
   </div>
 </section>
