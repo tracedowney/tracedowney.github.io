@@ -70,6 +70,23 @@ layout: default
     </section>
     {% endif %}
 
+    {% if lane.feature.gallery %}
+    <section class="project-screenshot-preview" aria-labelledby="{{ lane.slug }}-gallery-title">
+      <div class="section-heading">
+        <h2 id="{{ lane.slug }}-gallery-title">{{ lane.feature.gallery.title }}</h2>
+        <p>{{ lane.feature.gallery.copy }}</p>
+      </div>
+      <div class="project-screenshot-preview__grid">
+        {% for image in lane.feature.gallery.images %}
+        <figure class="card project-screenshot-preview__item">
+          <img loading="lazy" src="{{ image.src | relative_url }}" alt="{{ image.alt }}" />
+          <figcaption>{{ image.label }}</figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
     {% assign page_content = content | strip %}
     {% if page_content != "" %}
       {{ content }}

@@ -35,6 +35,19 @@
     link:
       label: Read the AuditOS case study
       url: /projects/auditos/
+    gallery:
+      title: A closer look at the interface
+      copy: A few screens from the working desktop app, from the primary findings view through the review and baseline workflow.
+      images:
+        - src: /assets/images/projects/auditos/auditos-findings-summary-full-sanitized.png
+          alt: AuditOS findings tab showing categorized results, overall risk level, and recommendations after a local audit.
+          label: Quick Audit Results
+        - src: /assets/images/projects/auditos/auditos-behavior-tab-sanitized.png
+          alt: AuditOS behavior tab showing observed connections in a structured desktop review table.
+          label: Behavior Review
+        - src: /assets/images/projects/auditos/auditos-baseline-behavior-sanitized.png
+          alt: AuditOS behavior view after saving a baseline, showing DNS servers, startup items, and scheduled items in a structured review table.
+          label: Saved Baseline
     chips:
       - Workflow clarity
       - Review-ready records
