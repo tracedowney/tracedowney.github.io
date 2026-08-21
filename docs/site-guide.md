@@ -1,5 +1,11 @@
 # Site Guide
 
+## Public Image Protection
+
+- Public raster images referenced by pages are protected by the staggered full-image pattern in `assets/images/website-watermark.svg`.
+- The reusable renderer is `script/watermark-image.swift`. It writes JPEG or PNG according to the output filename and supports an optional maximum edge length plus `--pattern` for the repeating overlay.
+- Apply the mark to the web copy only. Do not overwrite source exports in `/Users/tracedowney/Downloads/Website Photots/Photo Work/`.
+
 ## Purpose
 
 `tracedowney.com` is a Jekyll portfolio that brings professional systems work, software, visual work, and hands-on craft into one site. The public site is deliberately curated: pages should explain the work clearly and show original work with enough context to be credible.
@@ -52,6 +58,6 @@
 
 ## Current Maintenance Priority
 
-- Jewelry has a local, unpublised collection-gallery expansion waiting for review and push.
-- Quilting should eventually gain a larger expandable collection gallery beneath its curated showcase.
-- Future image additions should preserve the distinction between a curated showcase and a broader collection.
+- Jewelry and Quilting each have an expandable collection area that is separate from their curated showcase.
+- The Quilting archive should grow only after visual review confirms each addition is a final, non-duplicate work.
+- Future image additions must preserve the distinction between a curated showcase and a broader collection, and must be watermarked before publication.

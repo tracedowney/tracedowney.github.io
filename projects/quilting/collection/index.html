@@ -1,0 +1,23 @@
+---
+layout: default
+title: Full Quilt Collection
+description: A growing collection of finished original quilts by Trace Downey.
+body_class: page-project-lane page-project-quilting
+background_style: signature
+---
+<section class="section quilt-collection-intro">
+  <a class="quilt-collection-back" href="{{ '/projects/quilting/' | relative_url }}">Back to Quilting</a>
+  <span class="eyebrow">Trace Downey Designs</span>
+  <h1>The full quilt collection.</h1>
+  <p>Finished quilts gathered in one place. This is an evolving record of the work, with one final view per piece so the collection can be seen without repeats or process images.</p>
+</section>
+
+<section class="section" aria-label="Full quilt collection">
+  <div class="quilt-collection-grid">
+    {% for quilt in site.data.quilt_collection %}
+      <figure class="quilt-collection-item">
+        <img loading="lazy" src="{{ '/assets/images/projects/quilting/collection/' | append: quilt.file | relative_url }}" alt="Finished original quilt by Trace Downey." />
+      </figure>
+    {% endfor %}
+  </div>
+</section>

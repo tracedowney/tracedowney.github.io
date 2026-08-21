@@ -6,7 +6,9 @@ This note records the presentation decisions for the original-work galleries so 
 
 - Original source photos live in `/Users/tracedowney/Downloads/Website Photots/Photo Work/`.
 - Import web copies into `assets/images/projects/<lane>/` with descriptive filenames. Keep the source export untouched.
-- Current web copies are resized to a maximum edge of 2400px and exported as JPEGs for site performance.
+- Current web copies are resized to a maximum edge of 2400px and exported as JPEGs for site performance. The larger quilt collection is limited to 1600px to keep the archive practical to load.
+- Every public raster image carries the supplied repeating `website-watermark.svg` pattern. The staggered full-image overlay is intentionally quiet at first glance but makes clean screenshots and crops materially harder to reuse. SVG marks and video files are excluded.
+- Use `script/watermark-image.swift <input> <output> <watermark-svg> [max-pixels] --pattern` for new public raster images. The source is tracked at `assets/images/website-watermark.svg`. Keep source masters outside the web assets and watermark only the public copy.
 - Do not present inspiration, reference, or third-party work as original portfolio work.
 - Specifically, `jewelry-bonsai-bloom.jpg` was an inspiration image for the white tree, not an original piece. It was removed from the site and repository and must not be restored to a gallery.
 
@@ -21,7 +23,9 @@ This note records the presentation decisions for the original-work galleries so 
 ### Quilting
 
 - The page is a curated showcase of finished quilts and block studies.
-- Future direction: add a separate, larger "from the collection" gallery beneath the showcase, similar to the Jewelry collection section. This should be expandable as more quilts are photographed and selected.
+- The page links to the separate full collection at `/projects/quilting/collection/`; the archive is a catalog grid without invented titles or lengthy captions.
+- The archive source list is `_data/quilt_collection.yml`. Selection uses visual comparison: one final view per quilt, no progress photos, no duplicate angles.
+- The current archive is a good starting release rather than a final catalog. Re-audit all entries visually before expanding it: remove remaining duplicates and fill gaps with missing completed quilts.
 
 ### Jewelry
 
