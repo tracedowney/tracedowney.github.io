@@ -458,23 +458,6 @@ body.page-work .page-intro h1 {
   color: var(--ink-700);
 }
 
-.home-hero__facts {
-  display: grid;
-  gap: 0.75rem;
-  margin: 0.1rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.home-hero__facts li {
-  padding: 0.85rem 1rem;
-  border: 1px solid rgba(28, 35, 48, 0.08);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.42);
-  color: var(--ink-800);
-  line-height: 1.45;
-}
-
 .home-hero__profile {
   position: relative;
   z-index: 1;
