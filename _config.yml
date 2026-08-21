@@ -4,5 +4,6 @@ url: https://tracedowney.com
 timezone: America/Chicago
 lang: en
 exclude:
+  - docs
   - tmp
   - drafts
