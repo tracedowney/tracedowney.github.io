@@ -24,9 +24,15 @@ guard let source = NSImage(contentsOf: inputURL),
 }
 
 let sourcePixels = source.representations.compactMap { $0 as? NSBitmapImageRep }.first
-let sourceSize = sourcePixels.map { NSSize(width: $0.pixelsWide, height: $0.pixelsHigh) } ?? source.size
-let scale = min(1, maxPixels / max(sourceSize.width, sourceSize.height))
-let canvasSize = NSSize(width: floor(sourceSize.width * scale), height: floor(sourceSize.height * scale))
+let sourcePixelSize = sourcePixels.map { NSSize(width: $0.pixelsWide, height: $0.pixelsHigh) } ?? source.size
+let scale = min(1, maxPixels / max(sourcePixelSize.width, sourcePixelSize.height))
+let canvasSize = NSSize(width: floor(sourcePixelSize.width * scale), height: floor(sourcePixelSize.height * scale))
+let normalizedSource = (source.copy() as? NSImage) ?? source
+
+// NSImage.draw uses point-space dimensions. Reset the image size to its pixel
+// size so higher-DPI exports do not render as a tiny image inside a large canvas.
+normalizedSource.size = sourcePixelSize
+let sourceRect = NSRect(origin: .zero, size: sourcePixelSize)
 guard let canvas = NSBitmapImageRep(
     bitmapDataPlanes: nil,
     pixelsWide: Int(canvasSize.width),
@@ -46,7 +52,7 @@ guard let canvas = NSBitmapImageRep(
 
 NSGraphicsContext.saveGraphicsState()
 NSGraphicsContext.current = context
-source.draw(in: NSRect(origin: .zero, size: canvasSize), from: NSRect(origin: .zero, size: sourceSize), operation: .copy, fraction: 1)
+normalizedSource.draw(in: NSRect(origin: .zero, size: canvasSize), from: sourceRect, operation: .copy, fraction: 1)
 
 if usesPattern {
     // Offset alternating rows so a useful crop cannot avoid the copyright mark.
